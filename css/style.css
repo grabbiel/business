@@ -65,7 +65,7 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: var(--project1-color);
-  padding: 10px 20px;
+  padding: 10px 5vw;
   border-radius: 10px;
   margin-bottom: 15px;
   color: white;
@@ -94,11 +94,11 @@ body {
 
   #resume-title {
     flex-direction: row;
-    padding: 10px;
+    padding: 10px 5vw;
   }
 
   #resume object {
-    height: 50vh;
+    display: none;
   }
 }
 
