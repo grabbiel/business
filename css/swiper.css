@@ -100,7 +100,7 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   position: relative;
   z-index: 50;
   height: min(var(--wrapper-height-vw), var(--wrapper-height));
