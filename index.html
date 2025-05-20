@@ -15,6 +15,18 @@
       <h1>Francisco C.</h1>
       <p>MEng. Computer Science student at Oregon State University</p>
     </div>
-    <div class="modal"></div>
+    <div id="modal" class="modal"></div>
+    <script>
+      // Ensure the DOM is fully loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get the modal element
+        const modal = document.getElementById("modal");
+
+        // Show the modal with a slight delay
+        setTimeout(function () {
+          modal.classList.add("visible");
+        }, 500);
+      });
+    </script>
   </body>
 </html>
