@@ -1,39 +1,77 @@
 /* Project Theme Colors */
 :root {
-  --project0-color: #3498db; /* Blue */
-  --project1-color: #e74c3c; /* Red */
-  --project2-color: #2ecc71; /* Green */
-  --project3-color: #f39c12; /* Orange */
-  --project4-color: #9b59b6; /* Purple */
-  --project5-color: #1abc9c; /* Teal */
-  --project6-color: #f1c40f; /* Yellow */
+  /* Base variables */
   --vw-min: 1200;
   --color-character0: #ff6133;
   --font-rockwell: 'Rockwell', serif;
   --font-mplus: 'Segoe UI', 'Arial Rounded MT Bold', sans-serif;
+  
+  /* Primary anchor variables (user-adjustable) */
+  --character-img-height: 350px;
+  
+  /* Responsive calculation for primary anchor */
+  --character-img-height-vw: calc(350 / var(--vw-min) * 100vw);
+  
+  /* All positioning derived from character image height */
+  --wrapper-height: calc(var(--character-img-height) * 1.87); /* 656px when image is 350px */
+  --wrapper-height-vw: calc(var(--character-img-height-vw) * 1.87);
+  
+  --name-top: calc(var(--character-img-height) * 0.143); /* 50px when image is 350px */
+  --name-top-vw: calc(var(--character-img-height-vw) * 0.143);
+  --name-font-size: calc(var(--character-img-height) * 0.091); /* 32px */
+  --name-font-size-vw: calc(var(--character-img-height-vw) * 0.091);
+  
+  --cv-top: calc(var(--character-img-height) * 0.331); /* 116px */
+  --cv-top-vw: calc(var(--character-img-height-vw) * 0.331);
+  --cv-font-size: calc(var(--character-img-height) * 0.057); /* 20px */
+  --cv-font-size-vw: calc(var(--character-img-height-vw) * 0.057);
+  
+  --profile-bg-height: calc(var(--character-img-height) * 0.75); /* 262.5px */
+  --profile-bg-height-vw: calc(var(--character-img-height-vw) * 0.75);
+  --profile-bg-top: calc(var(--character-img-height) * 0.49); /* 171.5px */
+  --profile-bg-top-vw: calc(var(--character-img-height-vw) * 0.49);
+  
+  --face-size: calc(var(--character-img-height) * 0.28); /* 98px */
+  --face-size-vw: calc(var(--character-img-height-vw) * 0.28);
+  --faces-right: calc(var(--character-img-height) * 0.114); /* 40px */
+  --faces-right-vw: calc(var(--character-img-height-vw) * 0.114);
+  --faces-margin-top: calc(var(--character-img-height) * -0.63); /* -220px */
+  --faces-margin-top-vw: calc(var(--character-img-height-vw) * -0.63);
+  
+  --description-top: calc(var(--character-img-height) * 0.6); /* 210px */
+  --description-top-vw: calc(var(--character-img-height-vw) * 0.6);
+  --description-width: calc(var(--character-img-height) * 0.914); /* 320px */
+  --description-width-vw: calc(var(--character-img-height-vw) * 0.914);
+  --description-font-size: calc(var(--character-img-height) * 0.046); /* 16px */
+  --description-font-size-vw: calc(var(--character-img-height-vw) * 0.046);
+  
+  --en-name-top: calc(var(--character-img-height) * 1.28); /* 448px */
+  --en-name-top-vw: calc(var(--character-img-height-vw) * 1.28);
+  --en-name-font-size: calc(var(--character-img-height) * 0.251); /* 88px */
+  --en-name-font-size-vw: calc(var(--character-img-height-vw) * 0.251);
 }
 
 .character-slide {
   position: relative;
-  height: min(calc(656 / var(--vw-min) * 100vw), 656px);
+  height: min(var(--wrapper-height-vw), var(--wrapper-height));
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
 }
 
 .character-wrapper {
-  width: min(calc(880 / var(--vw-min) * 100vw), 880px);
+  width: min(var(--wrapper-width-vw), var(--wrapper-width));
+  height: min(var(--wrapper-height-vw), var(--wrapper-height));
   margin: 0 auto;
-  height: min(calc(656 / var(--vw-min) * 100vw), 656px);
   position: relative;
 }
 
 .character-name {
   position: absolute;
   left: 0;
-  top: min(calc(50 / var(--vw-min) * 100vw), 50px);
+  top: min(var(--name-top-vw), var(--name-top));
+  font-size: min(var(--name-font-size-vw), var(--name-font-size));
   line-height: 1;
-  font-size: min(calc(32 / var(--vw-min) * 100vw), 32px);
   font-weight: 700;
   z-index: 60;
 }
@@ -46,9 +84,9 @@
 .character-cv {
   position: absolute;
   left: 0;
-  top: min(calc(116 / var(--vw-min) * 100vw), 116px);
+  top: min(var(--cv-top-vw), var(--cv-top));
+  font-size: min(var(--cv-font-size-vw), var(--cv-font-size));
   line-height: 1;
-  font-size: min(calc(20 / var(--vw-min) * 100vw), 20px);
   font-weight: 700;
   z-index: 60;
   color: var(--color-character0);
@@ -65,29 +103,31 @@
   align-items: flex-end;
   position: relative;
   z-index: 50;
-  height: min(calc(656 / var(--vw-min) * 100vw), 656px);
+  height: min(var(--wrapper-height-vw), var(--wrapper-height));
 }
 
 .character-img img {
-  height: min(calc(500 / var(--vw-min) * 100vw), 500px);
+  height: min(var(--character-img-height-vw), var(--character-img-height));
+  width: auto;
   object-fit: contain;
 }
 
 .character-faces {
   position: absolute;
-  right: min(calc(40 / var(--vw-min) * 100vw), 40px);
+  right: min(var(--faces-right-vw), var(--faces-right));
+  margin-top: max(var(--faces-margin-top-vw), var(--faces-margin-top));
   top: 50%;
-  margin-top: max(calc(-220 / var(--vw-min) * 100vw), -220px);
-  height: min(calc(440 / var(--vw-min) * 100vw), 440px);
+  height: min(calc(var(--face-size-vw) * 2 + 20px), calc(var(--face-size) * 2 + 20px));
+  width: min(var(--faces-width-vw), var(--faces-width));
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: min(calc(200 / var(--vw-min) * 100vw), 200px);
   z-index: 51;
 }
 
 .character-faces li {
-  height: min(calc(200 / var(--vw-min) * 100vw), 200px);
+  height: min(var(--face-size-vw), var(--face-size));
+  width: min(var(--face-size-vw), var(--face-size));
   border-radius: 50%;
   overflow: hidden;
   list-style: none;
@@ -102,9 +142,9 @@
 .character-description {
   position: absolute;
   left: 0;
-  top: min(calc(210 / var(--vw-min) * 100vw), 210px);
-  width: min(calc(320 / var(--vw-min) * 100vw), 320px);
-  font-size: min(calc(16 / var(--vw-min) * 100vw), 16px);
+  top: min(var(--description-top-vw), var(--description-top));
+  width: min(var(--description-width-vw), var(--description-width));
+  font-size: min(var(--description-font-size-vw), var(--description-font-size));
   color: #fff;
   z-index: 52;
 }
@@ -121,11 +161,11 @@
 }
 
 .character-en-name {
-  font-size: min(calc(88 / var(--vw-min) * 100vw), 88px);
+  font-size: min(var(--en-name-font-size-vw), var(--en-name-font-size));
   line-height: 0.74;
   position: absolute;
   left: 0;
-  top: min(calc(488 / var(--vw-min) * 100vw), 488px);
+  top: min(var(--en-name-top-vw), var(--en-name-top));
   font-family: var(--font-rockwell);
   font-weight: 700;
   color: var(--color-character0);
@@ -134,10 +174,10 @@
 
 .main-profile-bg {
   position: absolute;
+  height: min(var(--profile-bg-height-vw), var(--profile-bg-height));
+  top: min(var(--profile-bg-top-vw), var(--profile-bg-top));
   left: 0;
-  top: min(calc(160 / var(--vw-min) * 100vw), 160px);
   width: 100%;
-  height: min(calc(300 / var(--vw-min) * 100vw), 300px);
   background-color: var(--color-character0);
   border-radius: 15px;
   z-index: 30;
@@ -171,6 +211,7 @@
 @media screen and (max-width: 768px) {
   :root {
     --vw-min: 750;
+    --character-img-height-vw: calc(300 / var(--vw-min) * 100vw);
   }
   
   body {
@@ -207,8 +248,8 @@
   }
   
   .character-faces li {
-    height: min(calc(100 / var(--vw-min) * 100vw), 100px);
-    width: min(calc(100 / var(--vw-min) * 100vw), 100px);
+    height: min(var(--face-size-vw), var(--face-size));
+    width: min(var(--face-size-vw), var(--face-size));
   }
   
   .character-description {
@@ -218,7 +259,7 @@
   
   .character-en-name {
     font-size: min(calc(60 / var(--vw-min) * 100vw), 60px);
-    top: min(calc(350 / var(--vw-min) * 100vw), 350px);
+    top: min(var(--en-name-top-vw), var(--en-name-top));
   }
   
   .pc {
