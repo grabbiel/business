@@ -24,7 +24,6 @@ body {
   background-repeat: repeat;
   background-size: 312px 312px;
   animation: bgAnim 10s linear infinite;
-  isolation: isolate;
 }
 
 @keyframes bgAnim {
@@ -33,13 +32,6 @@ body {
   }
   to {
     background-position: -312px -312px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .modal {
-    filter: invert(1) hue-rotate(180deg);
-    background-blend-mode: screen;
   }
 }
 
