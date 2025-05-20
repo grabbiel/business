@@ -1,3 +1,49 @@
+html,
 body {
-  background-color: violet;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: monospace, sans-serif;
+}
+
+.main {
+  position: relative;
+  z-index: 1;
+  padding-top: 5vh;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff url(../assets/pattern.png) repeat 0 0 / 312px 312px;
+  animation: bgAnim 10s linear infinite;
+  z-index: -1;
+}
+
+@keyframes bgAnim {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -312px -312px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .modal {
+    background: #fff url(../img/common/bg.png) repeat 0 0 / 41.6vw 41.6vw;
+  }
+
+  @keyframes bgAnim {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -41.6vw -41.6vw;
+    }
+  }
 }
