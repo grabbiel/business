@@ -9,10 +9,12 @@ body {
 
 .main {
   position: relative;
+  width: 80vw;
   z-index: 1;
-  padding-top: 5vh;
+  margin: 5vh auto;
 }
 
+/* MODAL BACKGROUND */
 .modal {
   position: fixed;
   left: 0;

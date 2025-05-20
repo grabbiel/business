@@ -12,8 +12,181 @@
   </head>
   <body>
     <div class="main">
-      <h1>Francisco C.</h1>
-      <p>MEng. Computer Science student at Oregon State University</p>
+      <div id="introduction">
+        <h1>Francisco C.</h1>
+        <div id="socials"></div>
+        <p>MEng. Computer Science student at Oregon State University</p>
+        <p>Interests include:</p>
+        <ul>
+          <li>Computer Graphics</li>
+          <li>Web Development</li>
+          <li>MacOS Internals</li>
+          <li>Audio Software</li>
+        </ul>
+      </div>
+      <div id="resume">
+        <div id="resume-title">
+          <h2>Resume (2025)</h2>
+          <div id="resume-download"></div>
+        </div>
+        <object data="cv/resume.pdf" type="application/pdf"></object>
+      </div>
+      <div id="projects" class="projects contents">
+        <div class="contents__header">
+          <p class="contents__title--en">Pro<br class="sp" />jects</p>
+          <h2 class="contents__title--ja">Projects</h2>
+        </div>
+
+        <!-- Navigation Thumbnails -->
+        <div class="project__navs">
+          <ul class="project__navLists">
+            <li class="project__navList is-active">
+              <a
+                href="javascript:;"
+                data-pid="0"
+                class="project__thumb project__thumb--0"
+              >
+                <img
+                  src="./assets/img/projects/0thumb.png"
+                  alt="Project 1"
+                  loading="lazy"
+                />
+              </a>
+            </li>
+            <li class="project__navList">
+              <a
+                href="javascript:;"
+                data-pid="1"
+                class="project__thumb project__thumb--1"
+              >
+                <img
+                  src="./assets/img/projects/1thumb.png"
+                  alt="Project 2"
+                  loading="lazy"
+                />
+              </a>
+            </li>
+            <li class="project__navList">
+              <a
+                href="javascript:;"
+                data-pid="2"
+                class="project__thumb project__thumb--2"
+              >
+                <img
+                  src="./assets/img/projects/2thumb.png"
+                  alt="Project 3"
+                  loading="lazy"
+                />
+              </a>
+            </li>
+            <!-- Add more as needed -->
+          </ul>
+        </div>
+
+        <!-- Project Swiper -->
+        <div class="project__swiper swiper">
+          <div class="project__swiper-wrapper swiper-wrapper">
+            <!-- Project 1 -->
+            <div
+              class="project__swiper-slide swiper-slide project__swiper-slide--0"
+            >
+              <div class="project__inWrap">
+                <p class="project__name">Project Name 1</p>
+                <p class="project__tech">
+                  <span>Tech</span>React, Node.js, GraphQL
+                </p>
+                <p class="project__img">
+                  <img src="./assets/img/projects/0main.png" alt="Project 1" />
+                </p>
+                <ul class="project__orgs">
+                  <li>
+                    <img
+                      src="./assets/img/projects/0org1.jpg"
+                      alt="Organization 1"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="./assets/img/projects/0org2.jpg"
+                      alt="Organization 2"
+                    />
+                  </li>
+                </ul>
+                <p class="project__description">
+                  <span>Featured Project</span> A comprehensive description of
+                  the project goes here.<br />
+                  Highlighting the key features and technologies used.<br />
+                  Explain what problems were solved and the overall impact.
+                </p>
+                <a
+                  href="https://project1.example.com"
+                  target="_blank"
+                  class="project__link"
+                  >View Project</a
+                >
+              </div>
+              <p class="project__enName">Project<br />One</p>
+            </div>
+
+            <!-- Project 2 -->
+            <div
+              class="project__swiper-slide swiper-slide project__swiper-slide--1"
+            >
+              <div class="project__inWrap">
+                <p class="project__name">Project Name 2</p>
+                <p class="project__tech">
+                  <span>Tech</span>Python, TensorFlow, AWS
+                </p>
+                <p class="project__img">
+                  <img src="./assets/img/projects/1main.png" alt="Project 2" />
+                </p>
+                <ul class="project__orgs">
+                  <li>
+                    <img
+                      src="./assets/img/projects/1org1.jpg"
+                      alt="Organization 1"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="./assets/img/projects/1org2.jpg"
+                      alt="Organization 2"
+                    />
+                  </li>
+                </ul>
+                <p class="project__description">
+                  <span>Machine Learning</span> Description of the second
+                  project with relevant details.<br />
+                  Technical overview and implementation specifics.<br />
+                  Results, impact, and lessons learned.
+                </p>
+                <a
+                  href="https://project2.example.com"
+                  target="_blank"
+                  class="project__link"
+                  >View Project</a
+                >
+              </div>
+              <p class="project__enName">Project<br />Two</p>
+            </div>
+
+            <!-- Add more project slides as needed -->
+          </div>
+          <!-- Navigation Arrows -->
+          <ul class="project__pnLists">
+            <li>
+              <a href="javascript:;" class="js-projectPrev"
+                ><span class="hd">Previous</span></a
+              >
+            </li>
+            <li>
+              <a href="javascript:;" class="js-projectNext"
+                ><span class="hd">Next</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
     <div id="modal" class="modal"></div>
   </body>
