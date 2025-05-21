@@ -1,3 +1,6 @@
+:root {
+  --main-width: 80vw;
+}
 html,
 body {
   margin: 0;
@@ -9,7 +12,7 @@ body {
 
 .main {
   position: relative;
-  width: 80vw;
+  width: var(--main-width);
   z-index: 1;
   margin: 5vh auto;
   padding-bottom: 30vh;
@@ -90,6 +93,10 @@ body {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  :root {
+    --main-width: 90vw;
+  }
+
   #socials {
     justify-content: center;
   }
@@ -99,6 +106,12 @@ body {
     padding: 10px 5vw;
   }
 
+  #resume object {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) and (orientation: landscape) {
   #resume object {
     display: none;
   }

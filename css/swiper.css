@@ -42,10 +42,11 @@
   );
   --profile-bg-width: 95%;
   --profile-bg-left: calc(calc(100% - var(--profile-bg-width)) / 2);
+
   --face-size: calc(var(--character-img-height) * 0.33); /* 98px */
   --face-size-vw: calc(var(--character-img-height-vw) * 0.33);
-  --faces-height: calc(var(--character-img-height) * 0.78);
-  --faces-height-vw: calc(var(--character-img-height-vw) * 0.78);
+  --faces-height: calc(var(--character-img-height) * 0.8);
+  --faces-height-vw: calc(var(--character-img-height-vw) * 0.8);
   --faces-right: calc(50% + var(--character-img-height) * 0.5);
   --faces-right-vw: calc(50% + var(--character-img-height) * 0.5);
   --faces-margin-top: calc(
@@ -57,8 +58,6 @@
 
   --description-left: calc(var(--character-img-height) * 0.25);
   --description-left-vw: calc(var(--character-img-height-vw) * 0.25);
-  --description-width: calc(var(--character-img-height) * 0.914); /* 320px */
-  --description-width-vw: calc(var(--character-img-height-vw) * 0.914);
   --description-font-size: calc(var(--profile-bg-height) / 10); /* 16px */
   --description-font-size-vw: calc(var(--profile-bg-height-vw) / 10);
   --description-height: calc(var(--profile-bg-height) * 0.8);
@@ -76,8 +75,8 @@
   --en-name-top-vw: calc(
     var(--profile-bg-top-vw) + var(--profile-bg-height-vw)
   );
-  --en-name-font-size: calc(var(--character-img-height) * 0.251); /* 88px */
-  --en-name-font-size-vw: calc(var(--character-img-height-vw) * 0.251);
+  --en-name-font-size: calc(var(--character-img-height) * 0.25); /* 88px */
+  --en-name-font-size-vw: calc(var(--character-img-height-vw) * 0.25);
 
   --navigation-button-height: 40px;
   --navigation-top: calc(50% - var(--navigation-button-height) / 2);
@@ -224,7 +223,7 @@
 
 .navigation {
   position: absolute;
-  width: 10%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   top: var(--navigation-top);
