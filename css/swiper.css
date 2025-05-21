@@ -256,10 +256,14 @@
     );
     --description-left: 2vw;
     --description-left-vw: 2vw;
-    --description-top: calc(var(--faces-margin-top) + var(--face-size));
+    --description-top: calc(var(--faces-margin-top) + var(--face-size) + 15px);
     --description-top-vw: calc(
-      var(--faces-margin-top-vw) + var(--face-size-vw)
+      var(--faces-margin-top-vw) + var(--face-size-vw) + 15px
     );
+    --cv-top: calc(
+      var(--profile-bg-top) - var(--cv-font-size) - 20px
+    ); /* 116px */
+    --cv-top-vw: calc(var(--profile-bg-top-vw) - var(--cv-font-size-vw) - 20px);
   }
 
   body {
