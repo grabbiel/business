@@ -246,7 +246,20 @@
 @media screen and (max-width: 768px) {
   :root {
     --vw-min: 750;
+    --character-img-height: 300px;
     --character-img-height-vw: calc(300 / var(--vw-min) * 100vw);
+    --faces-margin-top: calc(
+      var(--profile-bg-top) + var(--character-img-height) * 0.85
+    );
+    --faces-margin-top-vw: calc(
+      var(--profile-bg-top-vw) + var(--character-img-height-vw) * 0.85
+    );
+    --description-left: 2vw;
+    --description-left-vw: 2vw;
+    --description-top: calc(var(--faces-margin-top) + var(--face-size));
+    --description-top-vw: calc(
+      var(--faces-margin-top-vw) + var(--face-size-vw)
+    );
   }
 
   body {
@@ -257,13 +270,13 @@
     position: absolute;
     right: 50%;
     transform: translateX(50%);
-    top: min(calc(280 / var(--vw-min) * 100vw), 280px);
     height: auto;
     width: 90%;
     flex-direction: row;
     justify-content: center;
     gap: 10px;
     margin-top: 0;
+    left: auto;
   }
 
   .character-faces li {
@@ -272,13 +285,17 @@
   }
 
   .character-description {
-    top: min(calc(400 / var(--vw-min) * 100vw), 400px);
     width: 90%;
+    color: black;
+  }
+
+  .character-description span {
+    background-color: var(--color-character0);
+    color: white;
   }
 
   .character-en-name {
     font-size: min(calc(60 / var(--vw-min) * 100vw), 60px);
-    top: min(var(--en-name-top-vw), var(--en-name-top));
   }
 
   .pc {
