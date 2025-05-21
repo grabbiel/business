@@ -290,6 +290,9 @@ function initSwiper() {
     nextSlide.style.opacity = 1;
     nextSlide.classList.add("active");
 
+    currentSlide.style.pointerEvents = "none";
+    nextSlide.style.pointerEvents = "auto";
+
     // Update current index
     currentIndex = index;
 
