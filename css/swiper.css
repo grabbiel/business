@@ -275,7 +275,6 @@ a:hover .overlay {
 .character-description a {
   display: inline-block;
   background-color: white;
-  color: var(--color-character0);
   padding: 5px 15px;
   border-radius: 25px;
   font-weight: bold;
@@ -291,15 +290,32 @@ a:hover .overlay {
   left: 15px;
   width: 85%;
   height: 2px;
+  background-size: 10px 2px;
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.character-0 .character-description a::after {
   background-image: repeating-linear-gradient(
     to right,
     var(--color-character0) 0 5px,
     transparent 5px 10px
   );
-  background-size: 10px 2px;
-  transform: translateY(100%);
-  opacity: 0;
-  pointer-events: none;
+}
+.character-1 .character-description a::after {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-character1) 0 5px,
+    transparent 5px 10px
+  );
+}
+.character-2 .character-description a::after {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-character2) 0 5px,
+    transparent 5px 10px
+  );
 }
 
 .character-description a:hover::after {
@@ -324,7 +340,6 @@ a:hover .overlay {
   top: min(var(--en-name-top-vw), var(--en-name-top));
   font-family: var(--font-rockwell);
   font-weight: 700;
-  color: var(--color-character0);
   z-index: 40;
   margin: 2% 0;
 }
@@ -419,8 +434,17 @@ a:hover .overlay {
   }
 
   .character-description a {
-    background-color: var(--color-character0);
     color: white;
+  }
+
+  .character-0 .character-description a {
+    background-color: var(--color-character-0);
+  }
+  .character-1 .character-description a {
+    background-color: var(--color-character-1);
+  }
+  .character-2 .character-description a {
+    background-color: var(--color-character-2);
   }
 
   .character-description a:hover {
