@@ -40,7 +40,8 @@
   --profile-bg-top-vw: calc(
     var(--wrapper-height-vw) * 0.5 - var(--profile-bg-height-vw) / 2
   );
-
+  --profile-bg-width: 95%;
+  --profile-bg-left: calc(calc(100% - var(--profile-bg-width)) / 2);
   --face-size: calc(var(--character-img-height) * 0.33); /* 98px */
   --face-size-vw: calc(var(--character-img-height-vw) * 0.33);
   --faces-height: calc(var(--character-img-height) * 0.78);
@@ -77,6 +78,9 @@
   );
   --en-name-font-size: calc(var(--character-img-height) * 0.251); /* 88px */
   --en-name-font-size-vw: calc(var(--character-img-height-vw) * 0.251);
+
+  --navigation-button-height: 40px;
+  --navigation-top: calc(50% - var(--navigation-button-height) / 2);
 }
 
 .character-slide {
@@ -198,7 +202,7 @@
   font-size: min(var(--en-name-font-size-vw), var(--en-name-font-size));
   line-height: 0.74;
   position: absolute;
-  left: 0;
+  left: var(--profile-bg-left);
   top: min(var(--en-name-top-vw), var(--en-name-top));
   font-family: var(--font-rockwell);
   font-weight: 700;
@@ -211,8 +215,8 @@
   position: absolute;
   height: min(var(--profile-bg-height-vw), var(--profile-bg-height));
   top: min(var(--profile-bg-top-vw), var(--profile-bg-top));
-  left: 0;
-  width: 100%;
+  left: var(--profile-bg-left);
+  width: var(--profile-bg-width);
   background-color: var(--color-character0);
   border-radius: 5vh 0 5vh 0;
   z-index: 30;
@@ -220,16 +224,16 @@
 
 .navigation {
   position: absolute;
-  width: 100%;
+  width: 10%;
   display: flex;
   justify-content: space-between;
-  top: 50%;
+  top: var(--navigation-top);
   z-index: 70;
 }
 
 .nav-button {
-  width: 50px;
-  height: 50px;
+  width: var(--navigation-button-height);
+  height: var(--navigation-button-height);
   background-color: white;
   border-radius: 50%;
   display: flex;
