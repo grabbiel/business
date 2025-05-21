@@ -111,6 +111,11 @@ body {
   }
 }
 
+@media screen and (max-width: 927px) and (orientation: landscape) {
+  #resume object {
+    display: none;
+  }
+}
 /* MODAL BACKGROUND */
 .modal {
   position: fixed;
