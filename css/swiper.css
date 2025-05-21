@@ -117,6 +117,7 @@
   transition: opacity 0.3s ease;
   opacity: 0;
   z-index: 1;
+  will-change: opacity;
 }
 
 .character-wrapper.active {
@@ -124,6 +125,9 @@
   opacity: 1;
 }
 
+.character-wrapper.transitioning {
+  transition: none;
+}
 .character-slide.swiping {
   cursor: grabbing;
 }

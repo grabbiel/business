@@ -1,3 +1,4 @@
+// Updated main.js with swiper functionality
 document.addEventListener("DOMContentLoaded", function () {
   // Add click event to download the PDF
   const resumeDownload = document.getElementById("resume-download");
@@ -72,12 +73,71 @@ function initSwiper() {
         slide.style.opacity = 1;
         slide.style.zIndex = 2;
         slide.style.display = "block";
+        slide.style.pointerEvents = "auto";
       } else {
         slide.classList.remove("active");
         slide.style.opacity = 0;
         slide.style.zIndex = 1;
+        slide.style.pointerEvents = "none";
 
         // Hide inactive slides after transition completes
+        setTimeout(() => {
+          if (
+            !slide.classList.contains("active") &&
+            !slide.classList.contains("transitioning")
+          ) {
+            slide.style.display = "none";
+          }
+        }, TRANSITION_DURATION);
+      }
+    });
+  }
+
+  function updateProgressiveFade(distX) {
+    const containerWidth = swiperContainer.offsetWidth;
+    const swipePercentage = Math.min(
+      Math.abs(distX) / (containerWidth * 0.5),
+      1,
+    );
+
+    let nextSlideIndex;
+
+    // Determine which slide to show based on swipe direction
+    if (distX > 0) {
+      // Right swipe - show previous slide
+      nextSlideIndex = (currentIndex - 1 + slides.length) % slides.length;
+    } else {
+      // Left swipe - show next slide
+      nextSlideIndex = (currentIndex + 1) % slides.length;
+    }
+
+    // Get current and target slides
+    const currentSlide = slides[currentIndex];
+    const nextSlide = slides[nextSlideIndex];
+
+    // Mark slides as transitioning
+    currentSlide.classList.add("transitioning");
+    nextSlide.classList.add("transitioning");
+
+    // Ensure next slide is visible
+    nextSlide.style.display = "block";
+    nextSlide.style.zIndex = 3;
+
+    // Set opacity based on swipe percentage
+    currentSlide.style.opacity = 1 - swipePercentage;
+    nextSlide.style.opacity = swipePercentage;
+  }
+
+  function resetProgressiveFade() {
+    slides.forEach((slide, index) => {
+      slide.classList.remove("transitioning");
+
+      if (index === currentIndex) {
+        slide.style.opacity = 1;
+      } else {
+        slide.style.opacity = 0;
+
+        // Hide non-active slides after transition
         setTimeout(() => {
           if (!slide.classList.contains("active")) {
             slide.style.display = "none";
@@ -102,6 +162,7 @@ function initSwiper() {
     // If horizontal swipe is more significant than vertical, prevent scrolling
     if (Math.abs(distX) > Math.abs(distY)) {
       e.preventDefault();
+      updateProgressiveFade(distX);
     }
   }
 
@@ -123,6 +184,9 @@ function initSwiper() {
         } else {
           goToNextSlide(); // Left swipe
         }
+      } else {
+        // Swipe didn't meet threshold - reset to original state
+        resetProgressiveFade();
       }
     }
 
@@ -152,6 +216,7 @@ function initSwiper() {
     // If horizontal swipe is more significant than vertical, prevent default
     if (Math.abs(distX) > Math.abs(distY)) {
       e.preventDefault();
+      updateProgressiveFade(distX);
     }
   }
 
@@ -173,6 +238,9 @@ function initSwiper() {
         } else {
           goToNextSlide(); // Left swipe
         }
+      } else {
+        // Swipe didn't meet threshold - reset to original state
+        resetProgressiveFade();
       }
     }
 
