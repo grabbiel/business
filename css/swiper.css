@@ -95,7 +95,23 @@
   width: min(var(--wrapper-width-vw), var(--wrapper-width));
   height: min(var(--wrapper-height-vw), var(--wrapper-height));
   margin: 0 auto;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  z-index: 1;
+}
+
+.character-wrapper.active {
+  z-index: 2;
+  opacity: 1;
+}
+
+.character-slide.swiping {
+  cursor: grabbing;
 }
 
 .character-name {
