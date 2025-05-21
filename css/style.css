@@ -92,7 +92,7 @@ body {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   :root {
     --main-width: 90vw;
   }
@@ -106,12 +106,6 @@ body {
     padding: 10px 5vw;
   }
 
-  #resume object {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 768px) and (orientation: landscape) {
   #resume object {
     display: none;
   }
