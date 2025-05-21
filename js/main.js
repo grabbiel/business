@@ -299,6 +299,7 @@ function initSwiper() {
     // After transition completes, update z-index and cleanup
     setTimeout(() => {
       currentSlide.classList.remove("active");
+      currentSlider.classList.remove("transitioning");
       currentSlide.style.zIndex = 1;
       nextSlide.style.zIndex = 2;
 
