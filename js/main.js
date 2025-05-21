@@ -299,7 +299,6 @@ function initSwiper() {
     // After transition completes, update z-index and cleanup
     setTimeout(() => {
       currentSlide.classList.remove("active");
-      currentSlider.classList.remove("transitioning");
       currentSlide.style.zIndex = 1;
       nextSlide.style.zIndex = 2;
 
@@ -307,6 +306,7 @@ function initSwiper() {
       slides.forEach((slide, i) => {
         if (i !== currentIndex) {
           slide.style.display = "none";
+          slide.classList.remove("transitioning");
         }
       });
     }, TRANSITION_DURATION);
