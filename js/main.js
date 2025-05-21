@@ -60,11 +60,20 @@ function initSwiper() {
   document.addEventListener("mouseleave", handleMouseEnd);
 
   // Add navigation buttons functionality
-  const prevButton = swiperContainer.querySelector(".nav-button:first-child");
-  const nextButton = swiperContainer.querySelector(".nav-button:last-child");
 
-  prevButton.addEventListener("click", goToPrevSlide);
-  nextButton.addEventListener("click", goToNextSlide);
+  const prevButtonSlides = Array.from(
+    swiperContainer.querySelectorAll(".nav-button.prev-button"),
+  );
+  const nextButtonSlides = Array.from(
+    swiperContainer.querySelectorAll(".nav-button.next-button"),
+  );
+  for (let i = 0; i < prevButtonSlides.length; i++) {
+    const prevButton = prevButtonSlides[i];
+    const nextButton = nextButtonSlides[i];
+
+    prevButton.addEventListener("click", goToPrevSlide);
+    nextButton.addEventListener("click", goToNextSlide);
+  }
 
   function updateSlides() {
     slides.forEach((slide, index) => {
