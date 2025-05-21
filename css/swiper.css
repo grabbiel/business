@@ -379,15 +379,51 @@ a:hover .overlay {
 }
 
 .nav-button {
+  position: relative;
   width: var(--navigation-button-height);
   height: var(--navigation-button-height);
-  background-color: white;
+  background-color: transparent;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/icon-circle_frame.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: rotateFrame 10s linear infinite;
+  z-index: -1;
+}
+
+.nav-button-icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border-radius: 50%;
+  z-index: 1; /* Above the rotating frame */
+}
+
+@keyframes rotateFrame {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .pc {
