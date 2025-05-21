@@ -195,6 +195,40 @@
   border-radius: 25px;
   font-weight: bold;
   margin-bottom: 2%;
+  text-decoration: none;
+  position: relative;
+}
+
+.character-description a::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 15px;
+  width: 85%;
+  height: 2px;
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-character0) 0 5px,
+    transparent 5px 10px
+  );
+  background-size: 10px 2px;
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.character-description a:hover::after {
+  animation: dash-move 1s linear infinite;
+  opacity: 1;
+}
+
+@keyframes dash-move {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 10px 0;
+  }
 }
 
 .character-en-name {
@@ -299,6 +333,18 @@
   .character-description a {
     background-color: var(--color-character0);
     color: white;
+  }
+
+  .character-description a:hover {
+    text-decoration: underline;
+  }
+
+  .character-description a::after {
+    background-image: repeating-linear-gradient(
+      to right,
+      white 0 5px,
+      transparent 5px 10px
+    );
   }
 
   .character-en-name {
