@@ -3,6 +3,8 @@
   /* Base variables */
   --vw-min: 1200;
   --color-character0: #ff6133;
+  --color-character1: #3498db;
+  --color-character2: #e74c3c;
   --font-rockwell: "Rockwell", serif;
   --font-mplus: "Segoe UI", "Arial Rounded MT Bold", sans-serif;
 
@@ -138,8 +140,19 @@
   line-height: 1;
   font-weight: 700;
   z-index: 60;
-  color: var(--color-character0);
   margin: 0;
+}
+
+.character-0 {
+  color: var(--color-character0);
+}
+
+.character-1 {
+  color: var(--color-character1);
+}
+
+.character-2 {
+  color: var(--color-character2);
 }
 
 .character-cv span {
@@ -379,6 +392,9 @@ a:hover .overlay {
     font-size: 1rem;
   }
 
+  .character-slide {
+    overflow: visible;
+  }
   .character-faces {
     position: absolute;
     right: 50%;
