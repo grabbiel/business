@@ -118,6 +118,18 @@ body {
   #resume object {
     display: none;
   }
+
+  #introduction {
+    padding: 2vh 6vw;
+  }
+
+  #introduction h1 {
+    font-size: xx-large;
+  }
+
+  #introduction ul {
+    padding-left: 5vw;
+  }
 }
 
 @media screen and (max-width: 927px) and (orientation: landscape) {

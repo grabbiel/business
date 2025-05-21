@@ -451,14 +451,20 @@ a:hover .overlay {
     color: white;
   }
 
+  .character-0 .character-description a,
+  .character-1 .character-description a,
+  .character-2 .character-description a {
+    color: white;
+  }
+
   .character-0 .character-description a {
-    background-color: var(--color-character-0);
+    background-color: var(--color-character0);
   }
   .character-1 .character-description a {
-    background-color: var(--color-character-1);
+    background-color: var(--color-character1);
   }
   .character-2 .character-description a {
-    background-color: var(--color-character-2);
+    background-color: var(--color-character2);
   }
 
   .character-description a:hover {
