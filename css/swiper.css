@@ -173,7 +173,7 @@
 
 .character-description {
   position: absolute;
-  left: 10vw;
+  left: min(var(--description-left), var(--description-left-vw));
   top: min(var(--description-top), var(--description-top-vw));
   width: fit-content;
   height: min(var(--description-height), var(--description-height-vw));
