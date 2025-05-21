@@ -19,14 +19,16 @@
   --wrapper-height-vw: calc(var(--character-img-height-vw) * 2);
 
   --name-top: calc(
-    var(--character-img-height) * 0.143
+    var(--cv-top) - var(--name-font-size) - 5px
   ); /* 50px when image is 350px */
-  --name-top-vw: calc(var(--character-img-height-vw) * 0.143);
+  --name-top-vw: calc(var(--cv-top-vw) - var(--name-font-size) - 5px);
   --name-font-size: calc(var(--character-img-height) * 0.091); /* 32px */
   --name-font-size-vw: calc(var(--character-img-height-vw) * 0.091);
 
-  --cv-top: calc(var(--character-img-height) * 0.331); /* 116px */
-  --cv-top-vw: calc(var(--character-img-height-vw) * 0.331);
+  --cv-top: calc(
+    var(--profile-bg-top) - var(--cv-font-size) - 10px
+  ); /* 116px */
+  --cv-top-vw: calc(var(--profile-bg-top-vw) - var(--cv-font-size-vw) - 10px);
   --cv-font-size: calc(var(--character-img-height) * 0.057); /* 20px */
   --cv-font-size-vw: calc(var(--character-img-height-vw) * 0.057);
 
@@ -52,21 +54,27 @@
     var(--profile-bg-top-vw) - var(--character-img-height) * 0.11
   );
 
-  --description-top: calc(
-    var(--profile-bg-top) + var(--profile-bg-height) * 0.15
-  ); /* 210px */
-  --description-top-vw: calc(
-    var(--profile-bg-top-vw) + var(--profile-bg-height-vw) * 0.15
-  );
   --description-left: calc(var(--character-img-height) * 0.25);
   --description-left-vw: calc(var(--character-img-height-vw) * 0.25);
   --description-width: calc(var(--character-img-height) * 0.914); /* 320px */
   --description-width-vw: calc(var(--character-img-height-vw) * 0.914);
-  --description-font-size: calc(var(--character-img-height) * 0.046); /* 16px */
-  --description-font-size-vw: calc(var(--character-img-height-vw) * 0.046);
+  --description-font-size: calc(var(--profile-bg-height) / 10); /* 16px */
+  --description-font-size-vw: calc(var(--profile-bg-height-vw) / 10);
+  --description-height: calc(var(--profile-bg-height) * 0.8);
+  --description-height-vw: calc(var(--profile-bg-height-vw) * 0.8);
+  --description-top: calc(
+    var(--profile-bg-top) + var(--profile-bg-height) * 0.1
+  );
+  --description-top-vw: calc(
+    var(--profile-bg-top-vw) + var(--profile-bg-height-vw) * 0.1
+  );
 
-  --en-name-top: calc(var(--character-img-height) * 1.28); /* 448px */
-  --en-name-top-vw: calc(var(--character-img-height-vw) * 1.28);
+  --en-name-top: calc(
+    var(--profile-bg-top) + var(--profile-bg-height)
+  ); /* 448px */
+  --en-name-top-vw: calc(
+    var(--profile-bg-top-vw) + var(--profile-bg-height-vw)
+  );
   --en-name-font-size: calc(var(--character-img-height) * 0.251); /* 88px */
   --en-name-font-size-vw: calc(var(--character-img-height-vw) * 0.251);
 }
@@ -75,7 +83,7 @@
   position: relative;
   height: min(var(--wrapper-height-vw), var(--wrapper-height));
   width: 100%;
-  max-width: 1000px;
+  max-width: 100vw;
   margin: 0 auto;
 }
 
@@ -88,12 +96,13 @@
 
 .character-name {
   position: absolute;
-  left: 0;
+  left: min(var(--description-left), var(--description-left-vw));
   top: min(var(--name-top-vw), var(--name-top));
   font-size: min(var(--name-font-size-vw), var(--name-font-size));
   line-height: 1;
   font-weight: 700;
   z-index: 60;
+  margin: 0;
 }
 
 .character-name small {
@@ -103,13 +112,14 @@
 
 .character-cv {
   position: absolute;
-  left: 0;
+  left: min(var(--description-left), var(--description-left-vw));
   top: min(var(--cv-top-vw), var(--cv-top));
   font-size: min(var(--cv-font-size-vw), var(--cv-font-size));
   line-height: 1;
   font-weight: 700;
   z-index: 60;
   color: var(--color-character0);
+  margin: 0;
 }
 
 .character-cv span {
@@ -163,12 +173,15 @@
 
 .character-description {
   position: absolute;
-  left: min(var(--description-left), var(--description-left-vw));
-  top: min(var(--description-top-vw), var(--description-top));
-  width: min(var(--description-width-vw), var(--description-width));
+  left: 10vw;
+  top: min(var(--description-top), var(--description-top-vw));
+  width: fit-content;
+  height: min(var(--description-height), var(--description-height-vw));
   font-size: min(var(--description-font-size-vw), var(--description-font-size));
   color: #fff;
   z-index: 52;
+  margin: 0;
+  padding: 0;
 }
 
 .character-description span {
@@ -178,7 +191,7 @@
   padding: 5px 15px;
   border-radius: 25px;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 2%;
 }
 
 .character-en-name {
@@ -191,6 +204,7 @@
   font-weight: 700;
   color: var(--color-character0);
   z-index: 40;
+  margin: 2% 0;
 }
 
 .main-profile-bg {
