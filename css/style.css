@@ -22,8 +22,8 @@ body {
 #socials {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin: 15px 0;
+  gap: 1.5rem;
+  margin: 3vh 0;
 }
 
 .social-icon {
@@ -41,7 +41,7 @@ body {
 
 .social-icon:hover {
   transform: scale(1.1);
-  background-color: var(--project0-color);
+  background-color: green;
 }
 
 .social-icon svg {
@@ -58,9 +58,18 @@ body {
 #introduction {
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 15px;
-  padding: 20px;
+  padding: 2vh 3vw;
   margin-bottom: 30px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+#introduction h1 {
+  font-size: xxx-large;
+}
+
+#introduction ul {
+  list-style: square;
+  padding-left: 2vw;
 }
 
 /* Resume title styling */
@@ -73,7 +82,7 @@ body {
   border-radius: 10px;
   margin-bottom: 15px;
   color: white;
-  background-color: red;
+  background-color: green;
 }
 
 #resume-download {
