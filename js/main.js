@@ -78,7 +78,7 @@ function initSwiper() {
   navbarItems.forEach((item) => {
     item.addEventListener("click", function () {
       const slideIndex = parseInt(this.getAttribute("data-slide"));
-      gotToSlide(slideIndex);
+      goToSlide(slideIndex);
     });
   });
 
