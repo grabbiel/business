@@ -60,20 +60,18 @@ function initSwiper() {
   document.addEventListener("mouseleave", handleMouseEnd);
 
   // Add navigation buttons functionality
+  swiperContainer.addEventListener("click", function (e) {
+    // Find if a nav button or its child was clicked
+    const navButton = e.target.closest(".nav-button");
 
-  const prevButtonSlides = Array.from(
-    swiperContainer.querySelectorAll(".nav-button.prev-button"),
-  );
-  const nextButtonSlides = Array.from(
-    swiperContainer.querySelectorAll(".nav-button.next-button"),
-  );
-  for (let i = 0; i < prevButtonSlides.length; i++) {
-    const prevButton = prevButtonSlides[i];
-    const nextButton = nextButtonSlides[i];
+    if (!navButton) return; // If not a nav button, exit
 
-    prevButton.addEventListener("click", goToPrevSlide);
-    nextButton.addEventListener("click", goToNextSlide);
-  }
+    if (navButton.classList.contains("prev-button")) {
+      goToPrevSlide();
+    } else if (navButton.classList.contains("next-button")) {
+      goToNextSlide();
+    }
+  });
 
   function updateSlides() {
     slides.forEach((slide, index) => {
