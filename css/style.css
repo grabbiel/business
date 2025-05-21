@@ -11,7 +11,8 @@ body {
   position: relative;
   width: 80vw;
   z-index: 1;
-  margin: 5vh auto 30vh;
+  margin: 5vh auto;
+  padding-bottom: 30vh;
 }
 
 /* Styling for the socials container */
