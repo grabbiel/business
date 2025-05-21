@@ -41,7 +41,7 @@ body {
 
 .social-icon:hover {
   transform: scale(1.1);
-  background-color: green;
+  background-color: #c6a7c8;
 }
 
 .social-icon svg {
@@ -82,16 +82,53 @@ body {
   border-radius: 10px;
   margin-bottom: 15px;
   color: white;
-  background-color: green;
+  background-color: #c6a7c8;
 }
 
 #resume-download {
+  position: relative;
   cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #81637c;
+  z-index: 1;
   transition: transform 0.3s ease;
 }
 
+#resume-download::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 2px dashed white; /* Pastel yellow */
+  animation: rotateDashedBorder 10s linear infinite;
+  z-index: -1;
+}
+
 #resume-download:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
+}
+
+#resume-download:hover::before {
+  border-color: #fffacd;
+  transition: border 0.2s ease;
+}
+
+#resume-download:hover svg {
+  fill: #fffacd;
+  transition: fill 0.2s ease;
+}
+
+#resume-title:has(#resume-download:hover) h2 {
+  color: #fffacd;
+  transition: color 0.2s ease;
 }
 
 #resume object {
