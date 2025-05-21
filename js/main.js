@@ -24,6 +24,7 @@ function initSwiper() {
   const slides = Array.from(
     swiperContainer.querySelectorAll(".character-wrapper"),
   );
+  const navbarItems = document.querySelectorAll(".navbar-item");
 
   // If there's only one slide, no need for swiping
   if (slides.length <= 1) return;
@@ -71,6 +72,14 @@ function initSwiper() {
     } else if (navButton.classList.contains("next-button")) {
       goToNextSlide();
     }
+  });
+
+  // Navbar Items
+  navbarItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      const slideIndex = parseInt(this.getAttribute("data-slide"));
+      gotToSlide(slideIndex);
+    });
   });
 
   function updateSlides() {
@@ -270,6 +279,24 @@ function initSwiper() {
     goToSlide(newIndex);
   }
 
+  function updateNavbar(index) {
+    const navbarItems = document.querySelectorAll(".navbar-item");
+    if (navbarItems.length > 0) {
+      // Remove active class from all items
+      navbarItems.forEach((item) => {
+        item.classList.remove("active");
+      });
+
+      // Add active class to current index
+      const activeNavItem = document.querySelector(
+        `.navbar-item[data-slide="${index}"]`,
+      );
+      if (activeNavItem) {
+        activeNavItem.classList.add("active");
+      }
+    }
+  }
+
   function goToSlide(index) {
     if (index === currentIndex) return;
 
@@ -289,9 +316,10 @@ function initSwiper() {
     currentSlide.style.opacity = 0;
     nextSlide.style.opacity = 1;
     nextSlide.classList.add("active");
-
     currentSlide.style.pointerEvents = "none";
     nextSlide.style.pointerEvents = "auto";
+
+    updateNavbar(index);
 
     // Update current index
     currentIndex = index;
