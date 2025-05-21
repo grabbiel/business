@@ -253,22 +253,6 @@
     font-size: 1rem;
   }
 
-  .character-wrapper {
-    width: 100%;
-  }
-
-  .main-profile-bg {
-    height: min(calc(220 / var(--vw-min) * 100vw), 220px);
-  }
-
-  .character-img {
-    height: min(calc(400 / var(--vw-min) * 100vw), 400px);
-  }
-
-  .character-img img {
-    height: min(calc(350 / var(--vw-min) * 100vw), 350px);
-  }
-
   .character-faces {
     position: absolute;
     right: 50%;
