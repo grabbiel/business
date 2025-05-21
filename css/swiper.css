@@ -320,7 +320,7 @@
     left: auto;
   }
 
-  .character-faces li {
+  .character-faces a {
     height: min(var(--face-size-vw), var(--face-size));
     width: min(var(--face-size-vw), var(--face-size));
   }
