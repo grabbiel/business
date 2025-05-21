@@ -283,6 +283,16 @@ a:hover .overlay {
   position: relative;
 }
 
+.character-0 .character-description a {
+  color: var(--color-character-0);
+}
+.character-1 .character-description a {
+  color: var(--color-character-1);
+}
+.character-2 .character-description a {
+  color: var(--color-character-2);
+}
+
 .character-description a::after {
   content: "";
   position: absolute;
