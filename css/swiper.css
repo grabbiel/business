@@ -301,8 +301,4 @@
   .character-en-name {
     font-size: min(calc(60 / var(--vw-min) * 100vw), 60px);
   }
-
-  .pc {
-    display: none;
-  }
 }
