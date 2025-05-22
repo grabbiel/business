@@ -282,17 +282,19 @@ function initSwiper() {
   function updateNavbar(index) {
     const navbarItems = document.querySelectorAll(".navbar-item");
     if (navbarItems.length > 0) {
-      // Remove active class from all items
+      // Remove active and clicked classes from all items
       navbarItems.forEach((item) => {
         item.classList.remove("active");
+        item.classList.remove("clicked");
       });
 
-      // Add active class to current index
+      // Add active and clicked classes to current index
       const activeNavItem = document.querySelector(
         `.navbar-item[data-slide="${index}"]`,
       );
       if (activeNavItem) {
         activeNavItem.classList.add("active");
+        activeNavItem.classList.add("clicked");
       }
     }
   }
