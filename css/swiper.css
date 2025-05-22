@@ -119,6 +119,28 @@
   color: var(--color-character6);
 }
 
+.navbar-item[data-slide="0"] path {
+  fill: var(--color-character0);
+}
+.navbar-item[data-slide="1"] path {
+  fill: var(--color-character1);
+}
+.navbar-item[data-slide="2"] path {
+  fill: var(--color-character2);
+}
+.navbar-item[data-slide="3"] path {
+  fill: var(--color-character3);
+}
+.navbar-item[data-slide="4"] path {
+  fill: var(--color-character4);
+}
+.navbar-item[data-slide="5"] path {
+  fill: var(--color-character5);
+}
+.navbar-item[data-slide="6"] path {
+  fill: var(--color-character6);
+}
+
 .character-wrapper {
   width: min(var(--wrapper-width-vw), var(--wrapper-width));
   height: min(var(--wrapper-height-vw), var(--wrapper-height));
