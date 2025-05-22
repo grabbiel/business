@@ -5,6 +5,10 @@
   --color-character0: #ff6133;
   --color-character1: #3498db;
   --color-character2: #e74c3c;
+  --color-character3: #8e44ad;
+  --color-character4: #2ecc71;
+  --color-character5: #f39c12;
+  --color-character6: #3498db;
   --font-rockwell: "Rockwell", serif;
   --font-mplus: "Segoe UI", "Arial Rounded MT Bold", sans-serif;
 
@@ -96,13 +100,23 @@
 .character-0 {
   color: var(--color-character0);
 }
-
 .character-1 {
   color: var(--color-character1);
 }
-
 .character-2 {
   color: var(--color-character2);
+}
+.character-3 {
+  color: var(--color-character3);
+}
+.character-4 {
+  color: var(--color-character4);
+}
+.character-5 {
+  color: var(--color-character5);
+}
+.character-6 {
+  color: var(--color-character6);
 }
 
 .character-wrapper {
@@ -296,6 +310,18 @@ a:hover .overlay {
 .character-2 .character-description a {
   color: var(--color-character2);
 }
+.character-3 .character-description a {
+  color: var(--color-character3);
+}
+.character-4 .character-description a {
+  color: var(--color-character4);
+}
+.character-5 .character-description a {
+  color: var(--color-character5);
+}
+.character-6 .character-description a {
+  color: var(--color-character6);
+}
 
 .character-description a::after {
   content: "";
@@ -328,6 +354,34 @@ a:hover .overlay {
   background-image: repeating-linear-gradient(
     to right,
     var(--color-character2) 0 5px,
+    transparent 5px 10px
+  );
+}
+.character-3 .character-description a::after {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-character3) 0 5px,
+    transparent 5px 10px
+  );
+}
+.character-4 .character-description a::after {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-character4) 0 5px,
+    transparent 5px 10px
+  );
+}
+.character-5 .character-description a::after {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-character5) 0 5px,
+    transparent 5px 10px
+  );
+}
+.character-6 .character-description a::after {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-character6) 0 5px,
     transparent 5px 10px
   );
 }
@@ -364,9 +418,30 @@ a:hover .overlay {
   top: min(var(--profile-bg-top-vw), var(--profile-bg-top));
   left: var(--profile-bg-left);
   width: var(--profile-bg-width);
-  background-color: var(--color-character0);
   border-radius: 5vh 0 5vh 0;
   z-index: 30;
+}
+
+.character-0 .main-profile-bg {
+  background-color: var(--color-character0);
+}
+.character-1 .main-profile-bg {
+  background-color: var(--color-character1);
+}
+.character-2 .main-profile-bg {
+  background-color: var(--color-character2);
+}
+.character-3 .main-profile-bg {
+  background-color: var(--color-character3);
+}
+.character-4 .main-profile-bg {
+  background-color: var(--color-character4);
+}
+.character-5 .main-profile-bg {
+  background-color: var(--color-character5);
+}
+.character-6 .main-profile-bg {
+  background-color: var(--color-character6);
 }
 
 .navigation {
@@ -503,6 +578,18 @@ a:hover .overlay {
   }
   .character-2 .character-description a {
     background-color: var(--color-character2);
+  }
+  .character-3 .character-description a {
+    background-color: var(--color-character3);
+  }
+  .character-4 .character-description a {
+    background-color: var(--color-character4);
+  }
+  .character-5 .character-description a {
+    background-color: var(--color-character5);
+  }
+  .character-6 .character-description a {
+    background-color: var(--color-character6);
   }
 
   .character-description a:hover {
