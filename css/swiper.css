@@ -530,34 +530,38 @@ a:hover .overlay {
 @media screen and (max-width: 768px) {
   :root {
     --vw-min: 750;
-    --character-img-height: 300px;
-    --character-img-height-vw: calc(300 / var(--vw-min) * 100vw);
+    --character-img-height: 500px;
+    --character-img-height-vw: calc(500 / var(--vw-min) * 100vw);
     --faces-margin-top: calc(
-      var(--profile-bg-top) + var(--character-img-height) * 0.85
+      var(--profile-bg-top) + var(--character-img-height) * 0.7
     );
     --faces-margin-top-vw: calc(
-      var(--profile-bg-top-vw) + var(--character-img-height-vw) * 0.85
+      var(--profile-bg-top-vw) + var(--character-img-height-vw) * 0.7
     );
     --description-left: 2vw;
     --description-left-vw: 2vw;
-    --description-top: calc(var(--faces-margin-top) + var(--face-size) + 20px);
-    --description-top-vw: calc(
-      var(--faces-margin-top-vw) + var(--face-size-vw) + 20px
-    );
+    --description-top: calc(var(--faces-margin-top));
+    --description-top-vw: calc(var(--faces-margin-top-vw));
     --description-font-size: calc(var(--profile-bg-height) / 6); /* 16px */
     --description-font-size-vw: calc(var(--profile-bg-height-vw) / 6);
 
-    --name-top: calc(var(--cv-top) - var(--name-font-size));
-    --name-top-vw: calc(var(--cv-top-vw) - var(--name-font-size));
-    --name-font-size: calc(var(--character-img-height) * 0.15);
-    --name-font-size-vw: calc(var(--character-img-height-vw) * 0.15);
+    --name-top: calc(var(--cv-top) - var(--name-font-size) / 1.5);
+    --name-top-vw: calc(var(--cv-top-vw) - var(--name-font-size) / 1.5);
+    --name-font-size: calc(var(--character-img-height) * 0.1);
+    --name-font-size-vw: calc(var(--character-img-height-vw) * 0.1);
 
     --cv-top: calc(
-      var(--profile-bg-top) - var(--cv-font-size) - 20px
+      var(--profile-bg-top) - var(--cv-font-size) - 80px
     ); /* 116px */
-    --cv-top-vw: calc(var(--profile-bg-top-vw) - var(--cv-font-size-vw) - 20px);
-    --cv-font-size: calc(var(--character-img-height) * 0.09);
-    --cv-font-size-vw: calc(var(--character-img-height-vw) * 0.09);
+    --cv-top-vw: calc(var(--profile-bg-top-vw) - var(--cv-font-size-vw) - 80px);
+    --cv-font-size: calc(var(--character-img-height) * 0.075);
+    --cv-font-size-vw: calc(var(--character-img-height-vw) * 0.075);
+
+    --profile-bg-height: calc(var(--character-img-height) * 0.3); /* 262.5px */
+    --profile-bg-height-vw: calc(var(--character-img-height-vw) * 0.3);
+
+    --en-name-font-size: calc(var(--character-img-height) * 0.4); /* 88px */
+    --en-name-font-size-vw: calc(var(--character-img-height-vw) * 0.4);
   }
 
   body {
@@ -592,7 +596,7 @@ a:hover .overlay {
 
   .character-description a {
     color: white;
-    border-radius: 5vh 0 5vh 0;
+    border-radius: 1.5vh 0 1.5vh 0;
   }
 
   .character-0 .character-description a,
@@ -640,6 +644,6 @@ a:hover .overlay {
   }
 
   .character-en-name {
-    font-size: min(calc(60 / var(--vw-min) * 100vw), 60px);
+    font-size: min(calc(90 / var(--vw-min) * 100vw), 90px);
   }
 }
