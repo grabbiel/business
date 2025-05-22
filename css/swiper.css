@@ -540,12 +540,12 @@ a:hover .overlay {
     );
     --description-left: 2vw;
     --description-left-vw: 2vw;
-    --description-top: calc(var(--faces-margin-top) + var(--face-size) + 15px);
+    --description-top: calc(var(--faces-margin-top) + var(--face-size) + 20px);
     --description-top-vw: calc(
-      var(--faces-margin-top-vw) + var(--face-size-vw) + 15px
+      var(--faces-margin-top-vw) + var(--face-size-vw) + 20px
     );
-    --description-font-size: calc(var(--profile-bg-height) / 7); /* 16px */
-    --description-font-size-vw: calc(var(--profile-bg-height-vw) / 7);
+    --description-font-size: calc(var(--profile-bg-height) / 6); /* 16px */
+    --description-font-size-vw: calc(var(--profile-bg-height-vw) / 6);
 
     --name-top: calc(var(--cv-top) - var(--name-font-size));
     --name-top-vw: calc(var(--cv-top-vw) - var(--name-font-size));
@@ -592,6 +592,7 @@ a:hover .overlay {
 
   .character-description a {
     color: white;
+    border-radius: 5vh 0 5vh 0;
   }
 
   .character-0 .character-description a,
