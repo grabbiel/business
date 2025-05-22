@@ -3,9 +3,10 @@
 .character-navbar {
   position: relative;
   width: var(--main-width);
-  margin: 0 auto;
-  padding: 20px 0;
+  margin: 0 6.66666vw;
   z-index: 60;
+  top: 50px;
+  padding: 0 min(calc(100 / var(--vw-min) * 100vw), 100px);
 }
 
 .character-navbar ul {
@@ -15,6 +16,7 @@
   padding: 0;
   margin: 0;
   gap: 25px;
+  flex-wrap: wrap;
 }
 
 .navbar-item {
@@ -47,8 +49,8 @@
 
 .navbar-icon {
   position: relative;
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,6 +76,11 @@
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
+  .character-navbar {
+    margin: 0 0 min(calc(96 / var(--vw-min) * 100vw), 96px);
+    padding: 0;
+  }
+
   .navbar-icon {
     width: 50px;
     height: 50px;

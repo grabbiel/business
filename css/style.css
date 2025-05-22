@@ -72,6 +72,10 @@ body {
   padding-left: 2vw;
 }
 
+#resume {
+  margin-bottom: 60px;
+}
+
 /* Resume title styling */
 #resume-title {
   display: flex;

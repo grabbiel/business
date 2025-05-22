@@ -16,9 +16,9 @@
 
   /* All positioning derived from character image height */
   --wrapper-height: calc(
-    var(--character-img-height) * 2
+    var(--character-img-height) * 1.5
   ); /* 656px when image is 350px */
-  --wrapper-height-vw: calc(var(--character-img-height-vw) * 2);
+  --wrapper-height-vw: calc(var(--character-img-height-vw) * 1.5);
 
   --name-top: calc(
     var(--cv-top) - var(--name-font-size) - 5px
