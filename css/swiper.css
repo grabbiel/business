@@ -447,6 +447,8 @@ a:hover .overlay {
     --description-top-vw: calc(
       var(--faces-margin-top-vw) + var(--face-size-vw) + 15px
     );
+    --name-top: calc(var(--cv-top) - var(--name-font-size));
+    --name-top-vw: calc(var(--cv-top-vw) - var(--name-font-size));
     --cv-top: calc(
       var(--profile-bg-top) - var(--cv-font-size) - 20px
     ); /* 116px */
