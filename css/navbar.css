@@ -30,7 +30,7 @@
 }
 
 .navbar-item.active {
-  transform: scale(1.15);
+  transform: scale(1.15) rotate(10deg);
 }
 
 .navbar-item.clicked {
