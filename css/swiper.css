@@ -572,16 +572,7 @@ a:hover .overlay {
     overflow: visible;
   }
   .character-faces {
-    position: absolute;
-    right: 50%;
-    transform: translateX(50%);
-    height: auto;
-    width: 90%;
-    flex-direction: row;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 0;
-    left: auto;
+    display: none;
   }
 
   .character-faces a {
