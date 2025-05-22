@@ -533,10 +533,10 @@ a:hover .overlay {
     --character-img-height: 500px;
     --character-img-height-vw: calc(500 / var(--vw-min) * 100vw);
     --faces-margin-top: calc(
-      var(--profile-bg-top) + var(--character-img-height) * 0.7
+      var(--profile-bg-top) + var(--character-img-height) * 0.9
     );
     --faces-margin-top-vw: calc(
-      var(--profile-bg-top-vw) + var(--character-img-height-vw) * 0.7
+      var(--profile-bg-top-vw) + var(--character-img-height-vw) * 0.9
     );
     --description-left: 2vw;
     --description-left-vw: 2vw;
@@ -551,15 +551,27 @@ a:hover .overlay {
     --name-font-size-vw: calc(var(--character-img-height-vw) * 0.1);
 
     --cv-top: calc(
-      var(--profile-bg-top) - var(--cv-font-size) - 80px
+      var(--profile-bg-top) - var(--cv-font-size) - 40px
     ); /* 116px */
-    --cv-top-vw: calc(var(--profile-bg-top-vw) - var(--cv-font-size-vw) - 80px);
+    --cv-top-vw: calc(var(--profile-bg-top-vw) - var(--cv-font-size-vw) - 40px);
     --cv-font-size: calc(var(--character-img-height) * 0.075);
     --cv-font-size-vw: calc(var(--character-img-height-vw) * 0.075);
 
-    --profile-bg-height: calc(var(--character-img-height) * 0.3); /* 262.5px */
-    --profile-bg-height-vw: calc(var(--character-img-height-vw) * 0.3);
+    --profile-bg-height: calc(var(--character-img-height) * 0.5); /* 262.5px */
+    --profile-bg-height-vw: calc(var(--character-img-height-vw) * 0.5);
+    --profile-bg-top: calc(
+      var(--wrapper-height) * 0.5 - var(--profile-bg-height) / 1.5
+    ); /* 171.5px */
+    --profile-bg-top-vw: calc(
+      var(--wrapper-height-vw) * 0.5 - var(--profile-bg-height-vw) / 1.5
+    );
 
+    --en-name-top: calc(
+      var(--profile-bg-top) + var(--profile-bg-height) + 5px
+    ); /* 448px */
+    --en-name-top-vw: calc(
+      var(--profile-bg-top-vw) + var(--profile-bg-height-vw) + 5px
+    );
     --en-name-font-size: calc(var(--character-img-height) * 0.4); /* 88px */
     --en-name-font-size-vw: calc(var(--character-img-height-vw) * 0.4);
   }
@@ -573,6 +585,9 @@ a:hover .overlay {
   }
   .character-faces {
     display: none;
+  }
+  .character-img {
+    z-index: 31;
   }
 
   .character-faces a {
