@@ -2,7 +2,6 @@
 
 .character-navbar {
   position: relative;
-  width: var(--main-width);
   margin: 0 6.66666vw;
   z-index: 60;
   top: 50px;
@@ -79,6 +78,7 @@
   .character-navbar {
     margin: 0 0 min(calc(96 / var(--vw-min) * 100vw), 96px);
     padding: 0;
+    top: 10px;
   }
 
   .navbar-icon {
