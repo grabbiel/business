@@ -424,14 +424,14 @@ a:hover .overlay {
 
 .character-en-name {
   font-size: min(var(--en-name-font-size-vw), var(--en-name-font-size));
-  line-height: 0.74;
+  line-height: 1;
   position: absolute;
   left: var(--profile-bg-left);
   top: min(var(--en-name-top-vw), var(--en-name-top));
   font-family: var(--font-rockwell);
   font-weight: 700;
   z-index: 40;
-  margin: 2% 0;
+  margin: 1% 0;
 }
 
 .main-profile-bg {
@@ -651,5 +651,7 @@ a:hover .overlay {
 
   .character-en-name {
     font-size: min(calc(90 / var(--vw-min) * 100vw), 90px);
+    text-shadow: 1px 1px white;
+    line-height: 0.9;
   }
 }
