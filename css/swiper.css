@@ -588,7 +588,11 @@ a:hover .overlay {
 
   .character-0 .character-description a,
   .character-1 .character-description a,
-  .character-2 .character-description a {
+  .character-2 .character-description a,
+  .character-3 .character-description a,
+  .character-4 .character-description a,
+  .character-5 .character-description a,
+  .character-6 .character-description a {
     color: white;
   }
 
