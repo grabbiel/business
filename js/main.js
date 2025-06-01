@@ -17,7 +17,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initialize the swiper
   initSwiper();
+
+  initSmoothScrolling();
 });
+
+function initSmoothScrolling() {
+  // Add smooth scrolling to all anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+}
 
 function initSwiper() {
   const swiperContainer = document.querySelector(".character-slide");
@@ -342,3 +360,33 @@ function initSwiper() {
     }, TRANSITION_DURATION);
   }
 }
+window.portfolioUtils = {
+  // Scroll to specific section
+  scrollToSection: function (sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  },
+
+  // Get current project slide
+  getCurrentProject: function () {
+    const activeSlide = document.querySelector('.character-wrapper.active');
+    if (activeSlide) {
+      const slideClass = Array.from(activeSlide.classList).find(cls => cls.startsWith('character-'));
+      return slideClass ? slideClass.replace('character-', '') : null;
+    }
+    return null;
+  },
+
+  // Navigate to specific project
+  goToProject: function (projectIndex) {
+    const navItem = document.querySelector(`.navbar-item[data-slide="${projectIndex}"]`);
+    if (navItem) {
+      navItem.click();
+    }
+  }
+};
