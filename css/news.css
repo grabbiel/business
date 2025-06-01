@@ -29,6 +29,10 @@
   font-weight: 700;
 }
 
+.newsArea:has(.news-tab.active) .news_h2 {
+  display: block;
+}
+
 .news_h2 span {
   position: relative;
   display: inline-block;
