@@ -149,6 +149,13 @@ body {
   border: none;
 }
 
+#project-title{
+  text-align: center;
+  margin: 50px auto 15px;
+  font-size: 2rem;
+  color: #c6a7c8;
+}
+
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
   :root {
@@ -180,6 +187,8 @@ body {
     padding-left: 5vw;
   }
 }
+
+
 
 @media screen and (max-width: 927px) and (orientation: landscape) {
   #resume object {
