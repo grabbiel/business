@@ -17,7 +17,8 @@ function initNewsSystem() {
       general: [],
       projects: [],
       updates: []
-    }
+    },
+    customNewsData: []
   };
 
   // Initialize the news system
@@ -100,6 +101,8 @@ function initNewsSystem() {
 
       if (!isCustom) {
         newsConfig.newsData[category] = newsData;
+      } else {
+        newsConfig.customNewsData = newsData;
       }
       renderNews(newsData);
       renderPagination(newsData.length);
@@ -225,7 +228,9 @@ function initNewsSystem() {
         pageLink.classList.add('current');
 
         // Reload news for current category
-        const newsData = newsConfig.newsData[newsConfig.currentCategory] || [];
+        const newsData = newsConfig.currentCategory
+          ? (newsConfig.newsData[newsConfig.currentCategory] || [])
+          : newsConfig.customNewsData;
         renderNews(newsData);
 
         // Smooth scroll to news section
@@ -287,6 +292,7 @@ function initNewsSystem() {
       if (titleElement) {
         titleElement.textContent = title;
       }
+      newsConfig.currentPage = 1;
       loadNewsFromFile(htmlFile, true)
     }
   };
