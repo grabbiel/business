@@ -487,6 +487,11 @@ a:hover .overlay {
   cursor: pointer;
 }
 
+.nav-button:hover {
+  width: calc(var(--navigation-button-height)*1.1);
+  height: calc(var(--navigation-button-height)*1.1);
+}
+
 .nav-button::before {
   content: "";
   position: absolute;
