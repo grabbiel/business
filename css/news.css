@@ -1,7 +1,6 @@
 /* CSS Variables for consistency */
 :root {
   --news-primary-color: #c6a7c8;
-  --news-primary-color-dark: color-mix(in srgb, var(--news-primary-color) 80%, black 20%);
   --news-text-color: #000126;
   --news-bg-color: rgba(255, 255, 255, 0.9);
   --news-hover-color: #81637c;
@@ -11,30 +10,37 @@
 
 .main:has(.character-0.active) {
   --news-primary-color: var(--color-character0);
+  --news-primary-color-dark: color-mix(in srgb, var(--news-primary-color) 80%, black 20%);
 }
 
 .main:has(.character-1.active) {
   --news-primary-color: var(--color-character1);
+  --news-primary-color-dark: color-mix(in srgb, var(--news-primary-color) 80%, black 20%);
 }
 
 .main:has(.character-2.active) {
   --news-primary-color: var(--color-character2);
+  --news-primary-color-dark: color-mix(in srgb, var(--news-primary-color) 80%, black 20%);
 }
 
 .main:has(.character-3.active) {
   --news-primary-color: var(--color-character3);
+  --news-primary-color-dark: color-mix(in srgb, var(--news-primary-color) 80%, black 20%);
 }
 
 .main:has(.character-4.active) {
   --news-primary-color: var(--color-character4);
+  --news-primary-color-dark: color-mix(in srgb, var(--news-primary-color) 80%, black 20%);
 }
 
 .main:has(.character-5.active) {
   --news-primary-color: var(--color-character5);
+  --news-primary-color-dark: color-mix(in srgb, var(--news-primary-color) 80%, black 20%);
 }
 
 .main:has(.character-6.active) {
   --news-primary-color: var(--color-character6);
+  --news-primary-color-dark: color-mix(in srgb, var(--news-primary-color) 80%, black 20%);
 }
 
 /* Main News Section */
