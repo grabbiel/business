@@ -41,7 +41,7 @@ body {
 
 .social-icon:hover {
   transform: scale(1.1);
-  background-color: #c6a7c8;
+  background-color: var(--news-primary-color);
 }
 
 .social-icon svg {
@@ -80,12 +80,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--project1-color);
   padding: 10px 5vw;
   border-radius: 10px;
   margin-bottom: 15px;
   color: white;
-  background-color: #c6a7c8;
+  background-color: var(--news-primary-color);
+
 }
 
 #resume-download {
