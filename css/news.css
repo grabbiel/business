@@ -32,6 +32,9 @@
 .newsArea:has(.news-tab.active) .news_h2 {
   display: block;
 }
+.newsArea:not(:has(.news-tab.active)) .news_h2 {
+  display: none !important; /* Explicitly hide when no active tab */
+}
 
 .news_h2 span {
   position: relative;
