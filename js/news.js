@@ -64,7 +64,7 @@ function initNewsSystem() {
   }
 
   // Load news from external HTML files (for future implementation)
-  async function loadNewsFromFile(category) {
+  async function loadNewsFromFile(category, isCustom = false) {
     try {
       const response = await fetch(`news/${category}.html`);
       if (!response.ok) {
@@ -89,7 +89,9 @@ function initNewsSystem() {
         };
       });
 
-      newsConfig.newsData[category] = newsData;
+      if (!isCustom) {
+        newsConfig.newsData[category] = newsData;
+      }
       renderNews(newsData);
       renderPagination(newsData.length);
 
@@ -267,6 +269,15 @@ function initNewsSystem() {
 
     loadFromFile: function (category) {
       loadNewsFromFile(category);
+    },
+
+    loadCustomNews: function (htmlFile, title = 'Custom News') {
+      tabs.forEach(tab => tab.classList.remove('active'));
+      const titleElement = document.querySelector('.newsFrame_title__txt');
+      if (titleElement) {
+        titleElement.textContent = title.toUpperCase();
+      }
+      loadNewsFromFile(htmlFile, true)
     }
   };
 
