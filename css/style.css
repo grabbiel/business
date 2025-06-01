@@ -97,7 +97,7 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-color: #81637c;
+  background-color: var(--news-primary-color-dark);
   z-index: 1;
   transition: transform 0.3s ease;
 }

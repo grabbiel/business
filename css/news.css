@@ -1,6 +1,7 @@
 /* CSS Variables for consistency */
 :root {
   --news-primary-color: #c6a7c8;
+  --news-primary-color-dark: color-mix(in srgb, var(--news-primary-color) 80%, black 20%);
   --news-text-color: #000126;
   --news-bg-color: rgba(255, 255, 255, 0.9);
   --news-hover-color: #81637c;
