@@ -16,137 +16,14 @@ function initNewsSystem() {
     newsData: {
       general: [],
       projects: [],
-      announcements: []
+      updates: []
     }
   };
-
-  // Sample news data for different categories
-  const sampleNewsData = {
-    general: [
-      {
-        date: '2025-01-15',
-        title: 'Portfolio website launched with interactive project showcase and news system',
-        link: '#'
-      },
-      {
-        date: '2025-01-10',
-        title: 'Started MEng Computer Science program at Oregon State University',
-        link: '#'
-      },
-      {
-        date: '2025-01-05',
-        title: 'Completed advanced web development certification course',
-        link: '#'
-      },
-      {
-        date: '2024-12-28',
-        title: 'Year-end review: 7 major projects completed in 2024',
-        link: '#'
-      },
-      {
-        date: '2024-12-20',
-        title: 'Attending virtual tech conference on emerging web technologies',
-        link: '#'
-      },
-      {
-        date: '2024-12-15',
-        title: 'Contributing to open source projects in computer graphics',
-        link: '#'
-      },
-      {
-        date: '2024-12-10',
-        title: 'Published article on modern web development best practices',
-        link: '#'
-      },
-      {
-        date: '2024-12-05',
-        title: 'Exploring machine learning applications in audio software',
-        link: '#'
-      }
-    ],
-    projects: [
-      {
-        date: '2025-01-10',
-        title: 'Jiyud Life simulation game reaches 3000+ downloads milestone',
-        link: '#'
-      },
-      {
-        date: '2025-01-05',
-        title: 'Cuy Engine: CSS3 parsing engine completed, HTML5 support in progress',
-        link: '#'
-      },
-      {
-        date: '2024-12-20',
-        title: 'Visa Spotter browser extension now supports Firefox - 1000+ active users',
-        link: '#'
-      },
-      {
-        date: '2024-12-15',
-        title: 'Hey Jerico media player reaches 8000+ downloads across all platforms',
-        link: '#'
-      },
-      {
-        date: '2024-12-01',
-        title: 'fctt FORTRAN compiler enters beta testing phase',
-        link: '#'
-      },
-      {
-        date: '2024-11-20',
-        title: 'Farrot Reader mobile app hits 1200+ downloads on both iOS and Android',
-        link: '#'
-      },
-      {
-        date: '2024-11-15',
-        title: 'Volunteer web development work: 3 websites successfully revamped',
-        link: '#'
-      },
-      {
-        date: '2024-11-01',
-        title: 'Started development of Cuy Engine HTML rendering engine',
-        link: '#'
-      }
-    ],
-    announcements: [
-      {
-        date: '2025-01-12',
-        title: 'Now accepting freelance web development projects for Q1 2025',
-        link: '#'
-      },
-      {
-        date: '2025-01-08',
-        title: 'Available for software engineering internship opportunities',
-        link: '#'
-      },
-      {
-        date: '2024-12-25',
-        title: 'Holiday break: Limited availability Dec 25 - Jan 2',
-        link: '#'
-      },
-      {
-        date: '2024-12-18',
-        title: 'Seeking collaborators for open source graphics projects',
-        link: '#'
-      },
-      {
-        date: '2024-12-10',
-        title: 'Updated portfolio with latest project showcases and resume',
-        link: '#'
-      },
-      {
-        date: '2024-12-01',
-        title: 'Speaking at local university about modern web development',
-        link: '#'
-      }
-    ]
-  };
-
-  // Initialize with sample data
-  newsConfig.newsData = sampleNewsData;
 
   // Initialize the news system
   function init() {
     setupTabHandlers();
-    loadNewsForCategory(newsConfig.currentCategory);
+    loadNewsFromFile(newsConfig.currentCategory);
     setupPaginationHandlers();
   }
 
@@ -395,6 +272,9 @@ function initNewsSystem() {
 
   // Initialize the system
   init();
+  loadNewsFromFile('general');
+  loadNewsFromFile('projects');
+  loadNewsFromFile('updates');
 }
 
 // Utility function to load news from external HTML files
