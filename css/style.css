@@ -152,8 +152,35 @@ body {
 #project-title{
   text-align: center;
   margin: 50px auto 15px;
-  font-size: 2rem;
-  color: #c6a7c8;
+  font-size: 4rem;
+}
+
+.main:has(.character-0.active) #project-title {
+  color: var(--color-character0);
+}
+
+.main:has(.character-1.active) #project-title {
+  color: var(--color-character1);
+}
+
+.main:has(.character-2.active) #project-title {
+  color: var(--color-character2);
+}
+
+.main:has(.character-3.active) #project-title {
+  color: var(--color-character3);
+}
+
+.main:has(.character-4.active) #project-title {
+  color: var(--color-character4);
+}
+
+.main:has(.character-5.active) #project-title {
+  color: var(--color-character5);
+}
+
+.main:has(.character-6.active) #project-title {
+  color: var(--color-character6);
 }
 
 /* Responsive adjustments */
@@ -164,6 +191,10 @@ body {
 
   #socials {
     justify-content: center;
+  }
+
+  #project-title{
+    font-size: 2.25rem;
   }
 
   #resume-title {
