@@ -54,6 +54,8 @@ function initSwiper() {
   let distY = 0;
   let startTime = 0;
   let isMouseDown = false;
+  let keyboardEnabled = false;
+  let intersectionObserver = null;
 
   // Constants
   const SWIPE_THRESHOLD = 50;
@@ -62,6 +64,8 @@ function initSwiper() {
 
   // Set initial state
   updateSlides();
+  setupIntersectionObserver();
+  setupKeyboardNavigation();
 
   // Add event listeners for touch devices
   swiperContainer.addEventListener("touchstart", handleTouchStart, {
@@ -358,6 +362,44 @@ function initSwiper() {
         }
       });
     }, TRANSITION_DURATION);
+  }
+  function setupIntersectionObserver() {
+    const options = {
+      root: null, // Use viewport as root
+      rootMargin: '0px',
+      threshold: 0.1 // Trigger when at least 10% is visible
+    };
+
+    intersectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.target === swiperContainer) {
+          keyboardEnabled = entry.isIntersecting;
+        }
+      });
+    }, options);
+
+    intersectionObserver.observe(swiperContainer);
+  }
+
+  function setupKeyboardNavigation() {
+    function handleKeyPress(e) {
+      // Only handle keys when character slide is in view
+      if (!keyboardEnabled) return;
+
+      // Only handle left and right arrow keys
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+        e.preventDefault(); // Prevent page scrolling
+
+        if (e.key === 'ArrowLeft') {
+          goToPrevSlide();
+        } else if (e.key === 'ArrowRight') {
+          goToNextSlide();
+        }
+      }
+    }
+
+    // Add keyboard event listener to document
+    document.addEventListener('keydown', handleKeyPress);
   }
 }
 window.portfolioUtils = {
