@@ -354,7 +354,7 @@
 /* Responsive Design */
 @media screen and (max-width: 768px) {
   .newsArea {
-    margin: 30px 0;
+    margin: 150px 0;
   }
 
   .newsFrameIn {
