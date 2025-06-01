@@ -282,9 +282,14 @@ function initNewsSystem() {
 
     loadCustomNews: function (htmlFile, title = 'Custom News') {
       tabs.forEach(tab => tab.classList.remove('active'));
+      newsConfig.currentCategory = null;
+      const newsHeading = document.querySelector('.news_h2');
+      if (newsHeading) {
+        newsHeading.style.display = 'none';
+      }
       const titleElement = document.querySelector('.newsFrame_title__txt');
       if (titleElement) {
-        titleElement.textContent = title.toUpperCase();
+        titleElement.textContent = title;
       }
       loadNewsFromFile(htmlFile, true)
     }

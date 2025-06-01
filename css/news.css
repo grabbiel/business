@@ -27,11 +27,6 @@
   margin-bottom: 30px;
   color: var(--news-text-color);
   font-weight: 700;
-  display: none;
-}
-
-.newsArea:has(.news-tab.active) .news_h2 {
-  display: block;
 }
 
 .news_h2 span {
