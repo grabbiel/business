@@ -149,6 +149,9 @@
 /* News Frame Main Content */
 .newsFrame_main {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* News Lists */
@@ -156,7 +159,8 @@
   width: 100%;
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 800px;
 }
 
 .newsList {
