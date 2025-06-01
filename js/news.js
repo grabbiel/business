@@ -24,6 +24,10 @@ function initNewsSystem() {
   function init() {
     setupTabHandlers();
     loadNewsFromFile(newsConfig.currentCategory);
+    const initialTab = document.querySelector(`.news-tab[data-category="${newsConfig.currentCategory}"]`);
+    if (initialTab) {
+      initialTab.classList.add('active');
+    }
     setupPaginationHandlers();
   }
 
@@ -38,6 +42,11 @@ function initNewsSystem() {
           // Update active tab
           tabs.forEach(t => t.classList.remove('active'));
           this.classList.add('active');
+
+          const titleElement = document.querySelector('.newsFrame_title__txt');
+          if (titleElement) {
+            titleElement.textContent = 'LATEST UPDATES'
+          }
 
           // Update current category and reset page
           newsConfig.currentCategory = category;
