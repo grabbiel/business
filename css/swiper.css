@@ -494,7 +494,7 @@ a:hover .overlay {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../assets/icon-circle_frame.svg");
+  background-image: url("../assets/icon-circle-filled.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
