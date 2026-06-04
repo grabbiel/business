@@ -3,7 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Add click event to download the PDF
   const resumeDownload = document.getElementById("resume-download");
 
-  resumeDownload.addEventListener("click", function () {
+  resumeDownload.addEventListener("click", function (ev) {
+    ev.preventDefault();
+    ev.stopPropagation();
     const pdfSrc = document
       .querySelector("#resume object")
       .getAttribute("data");
@@ -23,14 +25,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function initSmoothScrolling() {
   // Add smooth scrolling to all anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
+      const target = document.querySelector(this.getAttribute("href"));
       if (target) {
         target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
+          behavior: "smooth",
+          block: "start",
         });
       }
     });
@@ -366,12 +368,12 @@ function initSwiper() {
   function setupIntersectionObserver() {
     const options = {
       root: null, // Use viewport as root
-      rootMargin: '0px',
-      threshold: 0.1 // Trigger when at least 10% is visible
+      rootMargin: "0px",
+      threshold: 0.1, // Trigger when at least 10% is visible
     };
 
     intersectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.target === swiperContainer) {
           keyboardEnabled = entry.isIntersecting;
         }
@@ -387,19 +389,19 @@ function initSwiper() {
       if (!keyboardEnabled) return;
 
       // Only handle left and right arrow keys
-      if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+      if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
         e.preventDefault(); // Prevent page scrolling
 
-        if (e.key === 'ArrowLeft') {
+        if (e.key === "ArrowLeft") {
           goToPrevSlide();
-        } else if (e.key === 'ArrowRight') {
+        } else if (e.key === "ArrowRight") {
           goToNextSlide();
         }
       }
     }
 
     // Add keyboard event listener to document
-    document.addEventListener('keydown', handleKeyPress);
+    document.addEventListener("keydown", handleKeyPress);
   }
 }
 window.portfolioUtils = {
@@ -408,27 +410,31 @@ window.portfolioUtils = {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+        behavior: "smooth",
+        block: "start",
       });
     }
   },
 
   // Get current project slide
   getCurrentProject: function () {
-    const activeSlide = document.querySelector('.character-wrapper.active');
+    const activeSlide = document.querySelector(".character-wrapper.active");
     if (activeSlide) {
-      const slideClass = Array.from(activeSlide.classList).find(cls => cls.startsWith('character-'));
-      return slideClass ? slideClass.replace('character-', '') : null;
+      const slideClass = Array.from(activeSlide.classList).find((cls) =>
+        cls.startsWith("character-"),
+      );
+      return slideClass ? slideClass.replace("character-", "") : null;
     }
     return null;
   },
 
   // Navigate to specific project
   goToProject: function (projectIndex) {
-    const navItem = document.querySelector(`.navbar-item[data-slide="${projectIndex}"]`);
+    const navItem = document.querySelector(
+      `.navbar-item[data-slide="${projectIndex}"]`,
+    );
     if (navItem) {
       navItem.click();
     }
-  }
+  },
 };
