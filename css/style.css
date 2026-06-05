@@ -72,9 +72,6 @@ body {
   padding-left: 2vw;
 }
 
-#resume {
-}
-
 /* Resume title styling */
 #resume-title {
   display: flex;
@@ -131,18 +128,14 @@ body {
   right: -4px;
   bottom: -4px;
   border-radius: 50%;
-  border: 2px dashed white; /* Pastel yellow */
+  border: 2px dashed white;
   animation: rotateDashedBorder 10s linear infinite;
   z-index: -1;
 }
 
 @keyframes rotateDashedBorder {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 #resume-download:hover {
@@ -174,35 +167,17 @@ body {
   text-align: center;
   margin: 50px auto 15px;
   font-size: 4rem;
+  transition: color 0.3s ease;
 }
 
-.main:has(.character-0.active) #project-title {
-  color: var(--color-character0);
-}
-
-.main:has(.character-1.active) #project-title {
-  color: var(--color-character1);
-}
-
-.main:has(.character-2.active) #project-title {
-  color: var(--color-character2);
-}
-
-.main:has(.character-3.active) #project-title {
-  color: var(--color-character3);
-}
-
-.main:has(.character-4.active) #project-title {
-  color: var(--color-character4);
-}
-
-.main:has(.character-5.active) #project-title {
-  color: var(--color-character5);
-}
-
-.main:has(.character-6.active) #project-title {
-  color: var(--color-character6);
-}
+/* ── Project title color driven by data-active-color on .main ─────────── */
+.main[data-active-color="0"] #project-title { color: var(--color-character0); }
+.main[data-active-color="1"] #project-title { color: var(--color-character1); }
+.main[data-active-color="2"] #project-title { color: var(--color-character2); }
+.main[data-active-color="3"] #project-title { color: var(--color-character3); }
+.main[data-active-color="4"] #project-title { color: var(--color-character4); }
+.main[data-active-color="5"] #project-title { color: var(--color-character5); }
+.main[data-active-color="6"] #project-title { color: var(--color-character6); }
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
@@ -259,6 +234,7 @@ body {
     display: none;
   }
 }
+
 /* MODAL BACKGROUND */
 .modal {
   position: fixed;
@@ -273,16 +249,11 @@ body {
   opacity: 30%;
   will-change: transform;
   min-height: 100%;
-  min-height: 100%;
 }
 
 @keyframes bgAnim {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: -312px -312px;
-  }
+  from { background-position: 0 0; }
+  to { background-position: -312px -312px; }
 }
 
 @media screen and (max-width: 768px) {
@@ -291,11 +262,7 @@ body {
   }
 
   @keyframes bgAnim {
-    from {
-      background-position: 0 0;
-    }
-    to {
-      background-position: -41.6vw -41.6vw;
-    }
+    from { background-position: 0 0; }
+    to { background-position: -41.6vw -41.6vw; }
   }
 }

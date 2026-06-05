@@ -8,37 +8,38 @@
   --news-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.main:has(.character-0.active) {
+/* ── Active-color theming via data attribute (set by JS on .main) ─────── */
+.main[data-active-color="0"] {
   --news-primary-color: var(--color-character0);
   --news-primary-color-dark: color-mix(in srgb, var(--news-primary-color) 80%, black 20%);
 }
 
-.main:has(.character-1.active) {
+.main[data-active-color="1"] {
   --news-primary-color: var(--color-character1);
   --news-primary-color-dark: color-mix(in srgb, var(--news-primary-color) 80%, black 20%);
 }
 
-.main:has(.character-2.active) {
+.main[data-active-color="2"] {
   --news-primary-color: var(--color-character2);
   --news-primary-color-dark: color-mix(in srgb, var(--news-primary-color) 80%, black 20%);
 }
 
-.main:has(.character-3.active) {
+.main[data-active-color="3"] {
   --news-primary-color: var(--color-character3);
   --news-primary-color-dark: color-mix(in srgb, var(--news-primary-color) 80%, black 20%);
 }
 
-.main:has(.character-4.active) {
+.main[data-active-color="4"] {
   --news-primary-color: var(--color-character4);
   --news-primary-color-dark: color-mix(in srgb, var(--news-primary-color) 80%, black 20%);
 }
 
-.main:has(.character-5.active) {
+.main[data-active-color="5"] {
   --news-primary-color: var(--color-character5);
   --news-primary-color-dark: color-mix(in srgb, var(--news-primary-color) 80%, black 20%);
 }
 
-.main:has(.character-6.active) {
+.main[data-active-color="6"] {
   --news-primary-color: var(--color-character6);
   --news-primary-color-dark: color-mix(in srgb, var(--news-primary-color) 80%, black 20%);
 }
@@ -68,7 +69,7 @@
   display: block;
 }
 .newsArea:not(:has(.news-tab.active)) .news_h2 {
-  display: none !important; /* Explicitly hide when no active tab */
+  display: none !important;
 }
 
 .news_h2 span {
@@ -172,7 +173,6 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
-
 
 .news-tab:hover,
 .news-tab.active {
