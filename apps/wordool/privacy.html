@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Word Pool</title>
+<meta name="description" content="How Word Pool handles information. No accounts, no tracking, no advertising.">
+<meta name="robots" content="index, follow">
+<style>
+  :root {
+    --ink:        #151b33;
+    --ink-soft:   #4d5573;
+    --ink-faint:  #8b91a6;
+    --paper:      #f2f3ef;
+    --raised:     #ffffff;
+    --rule:       #dcded6;
+    --found:      #c9dfd4;
+    --found-ink:  #1b4438;
+
+    --measure: 34rem;
+
+    --serif: "Iowan Old Style", "Charter", "Palatino Linotype", Palatino,
+             Georgia, "Times New Roman", serif;
+    --mono:  ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+             "Liberation Mono", monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink:       #e8eaf2;
+      --ink-soft:  #a8aec4;
+      --ink-faint: #6f7590;
+      --paper:     #12161f;
+      --raised:    #1a1f2c;
+      --rule:      #2a3040;
+      --found:     #24544a;
+      --found-ink: #d6efe4;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: var(--measure);
+    margin-inline: auto;
+    padding: 0 1.5rem 5rem;
+  }
+
+  /* ---------------------------------------------------------------- hero */
+  /* The grid is the one flourish. It says "word search" faster than any
+     sentence could, and it earns its place by being the page's only
+     decoration. Everything below it stays quiet. */
+
+  .hero {
+    padding: clamp(3rem, 9vw, 5.5rem) 0 0;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    gap: clamp(0.1rem, 0.5vw, 0.25rem);
+    max-width: 26rem;
+    margin: 0 0 clamp(2rem, 6vw, 3rem);
+    font-family: var(--mono);
+    font-size: clamp(0.7rem, 2.6vw, 0.95rem);
+    color: var(--ink-faint);
+    user-select: none;
+  }
+
+  .grid span {
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    border-radius: 3px;
+  }
+
+  .grid .found {
+    color: var(--found-ink);
+    background: var(--found);
+    animation: reveal 520ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+
+  /* Left to right, the way you'd drag across it. */
+  .grid .found:nth-of-type(1) { animation-delay: 240ms; }
+  .grid .found:nth-of-type(2) { animation-delay: 285ms; }
+  .grid .found:nth-of-type(3) { animation-delay: 330ms; }
+  .grid .found:nth-of-type(4) { animation-delay: 375ms; }
+  .grid .found:nth-of-type(5) { animation-delay: 420ms; }
+  .grid .found:nth-of-type(6) { animation-delay: 465ms; }
+  .grid .found:nth-of-type(7) { animation-delay: 510ms; }
+
+  @keyframes reveal {
+    from { background: transparent; color: var(--ink-faint); transform: scale(0.9); }
+    to   { background: var(--found); color: var(--found-ink); transform: scale(1); }
+  }
+
+  h1 {
+    margin: 0 0 0.75rem;
+    font-size: clamp(2rem, 1.5rem + 2.4vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+
+  .app-name {
+    display: block;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .updated {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  /* ------------------------------------------------------------- summary */
+
+  .summary {
+    margin: clamp(2.5rem, 7vw, 3.5rem) 0 0;
+    padding: clamp(1.5rem, 5vw, 2rem);
+    background: var(--raised);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+  }
+
+  .summary p { margin: 0 0 1rem; }
+  .summary p:last-child { margin-bottom: 0; }
+  .summary p:first-of-type { font-size: 1.1em; }
+
+  /* ------------------------------------------------------------ sections */
+
+  section {
+    margin-top: clamp(3rem, 8vw, 4.25rem);
+  }
+
+  .eyebrow {
+    display: block;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 0.6rem;
+  }
+
+  h2 {
+    margin: 0 0 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--rule);
+    font-size: clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+  }
+
+  h3 {
+    margin: 2rem 0 0.5rem;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+  }
+
+  p { margin: 0 0 1rem; }
+  p:last-child { margin-bottom: 0; }
+
+  ul {
+    margin: 0 0 1rem;
+    padding-left: 1.1rem;
+  }
+  li { margin-bottom: 0.6rem; }
+  li:last-child { margin-bottom: 0; }
+
+  strong { font-weight: 600; }
+
+  a {
+    color: inherit;
+    text-decoration-color: var(--ink-faint);
+    text-underline-offset: 0.2em;
+  }
+  a:hover { text-decoration-color: currentColor; }
+
+  :focus-visible {
+    outline: 2px solid var(--found-ink);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* -------------------------------------------------------- processors */
+  /* A real table on wide screens; stacked cards on narrow ones, because a
+     three-column table at 360px is unreadable however it is scrolled. */
+
+  .processors {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95em;
+  }
+
+  .processors th,
+  .processors td {
+    text-align: left;
+    padding: 0.85rem 1rem 0.85rem 0;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+
+  .processors th {
+    font-family: var(--mono);
+    font-weight: 500;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    padding-top: 0;
+  }
+
+  .processors tbody th {
+    font-family: var(--serif);
+    font-size: 1rem;
+    letter-spacing: normal;
+    text-transform: none;
+    color: var(--ink);
+    font-weight: 600;
+    padding-top: 0.85rem;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 34rem) {
+    .processors thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+    .processors tr { display: block; padding: 1rem 0; border-bottom: 1px solid var(--rule); }
+    .processors tr:last-child { border-bottom: 0; }
+    .processors th,
+    .processors td { display: block; padding: 0; border: 0; }
+    .processors tbody th { padding-bottom: 0.35rem; white-space: normal; }
+    .processors td { color: var(--ink-soft); }
+    .processors td::before {
+      content: attr(data-label);
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin: 0.5rem 0 0.15rem;
+    }
+  }
+
+  /* ---------------------------------------------------------- footer */
+
+  footer {
+    margin-top: clamp(3.5rem, 9vw, 5rem);
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.9em;
+    color: var(--ink-soft);
+  }
+
+  .contact {
+    font-family: var(--mono);
+    font-size: 0.95em;
+    line-height: 1.9;
+  }
+
+  /* --------------------------------------------------- draft placeholders */
+
+  mark.todo {
+    background: repeating-linear-gradient(
+      -45deg, #ffe8a3, #ffe8a3 6px, #ffdd7a 6px, #ffdd7a 12px);
+    color: #4a3a00;
+    padding: 0.05em 0.3em;
+    border-radius: 3px;
+    font-family: var(--mono);
+    font-size: 0.85em;
+    font-weight: 500;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    mark.todo {
+      background: repeating-linear-gradient(
+        -45deg, #6b5410, #6b5410 6px, #5a4608 6px, #5a4608 12px);
+      color: #ffe8a3;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .grid .found { animation: none; }
+    * { transition-duration: 0.01ms !important; }
+  }
+
+  /* Policies get saved as PDFs and printed by people who want a record. */
+  @media print {
+    :root { --paper: #fff; --raised: #fff; --ink: #000; --ink-soft: #333;
+            --ink-faint: #666; --rule: #ccc; --found: #eee; --found-ink: #000; }
+    body { font-size: 11pt; }
+    .grid { display: none; }
+    section { break-inside: avoid; margin-top: 1.75rem; }
+    h2 { break-after: avoid; }
+    mark.todo { background: none; border: 1px solid #999; color: #000; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="grid" role="img" aria-label="A word search grid with the word PRIVACY found in it">
+      <span>K</span><span>Q</span><span>Z</span><span>M</span><span>T</span><span>X</span><span>B</span><span>F</span><span>W</span><span>H</span><span>J</span>
+      <span>V</span><span>S</span><span>D</span><span>N</span><span>P</span><span>L</span><span>R</span><span>G</span><span>Y</span><span>C</span><span>K</span>
+      <span>T</span><span>B</span><span class="found">P</span><span class="found">R</span><span class="found">I</span><span class="found">V</span><span class="found">A</span><span class="found">C</span><span class="found">Y</span><span>M</span><span>D</span>
+      <span>N</span><span>H</span><span>W</span><span>X</span><span>Q</span><span>F</span><span>S</span><span>K</span><span>T</span><span>L</span><span>B</span>
+      <span>C</span><span>M</span><span>J</span><span>Y</span><span>D</span><span>G</span><span>Z</span><span>V</span><span>N</span><span>P</span><span>R</span>
+    </div>
+
+    <span class="app-name">Word Pool</span>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated <mark class="todo">2026-08-05</mark></p>
+  </header>
+
+  <div class="summary">
+    <p>Word Pool does not ask for your name, email address, phone number, or any other detail that identifies you. There are no accounts and no sign-in.</p>
+    <p>In upcoming versions, two things would leave your device: the topics you type when generating a puzzle, and a cryptographic check that confirms the app is a genuine, unmodified copy. Neither would be tied to your identity.</p>
+    <p>We do not sell data, we do not show advertising, and we do not use third-party analytics or tracking.</p>
+  </div>
+
+  <section>
+    <span class="eyebrow">What leaves your device</span>
+    <h2>Information we handle (starting v2.0)</h2>
+
+    <h3>Topics you type</h3>
+    <p>When you generate a puzzle from a topic, that text is sent to our server and forwarded to Microsoft Azure OpenAI Service, which returns a list of related words. The topic is used for that request and is not stored afterward. It is not linked to you or to your device.</p>
+    <p>Because topics are processed by a third-party service, please do not type personal or sensitive information into the topic field.</p>
+
+    <h3>App verification data</h3>
+    <p>To stop automated abuse of the puzzle service, the app proves it is a genuine installation before each request:</p>
+    <ul>
+      <li><strong>On iPhone and iPad</strong>, we use Apple's App Attest. Your device generates a cryptographic key held in its Secure Enclave. We store that key's public half and its identifier so later requests can be verified. The key is specific to this app on this device and reveals nothing about you, your Apple Account, or anything else on the device.</li>
+      <li><strong>On Android</strong>, we use Google's Play Integrity API. Google returns a verdict about whether the app and device look genuine. We check the verdict and do not store it.</li>
+    </ul>
+
+    <h3>Technical information</h3>
+    <p>Our servers record the network address a request came from, along with the time and outcome, in order to apply rate limits and diagnose faults. These records are kept for 30 days and then deleted automatically.</p>
+
+    <h3>Information kept only on your device</h3>
+    <p>Your best times, settings, and game progress are stored on your device and are never uploaded. Deleting the app removes them.</p>
+  </section>
+
+  <section>
+    <span class="eyebrow">Third parties</span>
+    <h2>Who processes data for us</h2>
+    <table class="processors">
+      <thead>
+        <tr>
+          <th scope="col">Provider</th>
+          <th scope="col">What they handle</th>
+          <th scope="col">Where</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Microsoft Azure</th>
+          <td data-label="What they handle">Hosting, logging, and the language model that generates word lists</td>
+          <td data-label="Where">United States</td>
+        </tr>
+        <tr>
+          <th scope="row">Apple</th>
+          <td data-label="What they handle">App Attest verification (iOS only)</td>
+          <td data-label="Where">Apple's infrastructure</td>
+        </tr>
+        <tr>
+          <th scope="row">Google</th>
+          <td data-label="What they handle">Play Integrity verification (Android only)</td>
+          <td data-label="Where">Google's infrastructure</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:1.25rem">These providers act on our instructions. We do not share data with anyone else, and we do not sell or rent it under any circumstances.</p>
+  </section>
+
+  <section>
+    <span class="eyebrow">Younger players</span>
+    <h2>Children</h2>
+    <p>Word Pool is suitable for all ages and does not knowingly collect personal information from anyone, including children. Because the app has no accounts and collects no identifying details, there is nothing for a parent to request the deletion of. If you believe a child has provided personal information through the topic field, contact us and we will look into it.</p>
+  </section>
+
+  <section>
+    <span class="eyebrow">Access and deletion</span>
+    <h2>Your rights</h2>
+    <p>Depending on where you live, you may have rights to access, correct, or delete personal information a company holds about you, and to object to certain processing.</p>
+    <p>Because we hold no information that identifies you, there is usually nothing for us to retrieve or erase. Uninstalling the app removes everything stored locally. If you want to exercise a right or have a question about how this works, contact us at the address below.</p>
+  </section>
+
+  <section>
+    <span class="eyebrow">How it is protected</span>
+    <h2>Security</h2>
+    <p>Traffic between the app and our servers is encrypted with HTTPS. Requests are rejected unless they come from a verified installation of the app. Credentials and configuration are stored in Azure Key Vault, and access is limited to the systems that need it.</p>
+    <p>No system is perfectly secure, but the amount of information we hold is small by design, which limits what any breach could expose.</p>
+  </section>
+
+  <section>
+    <span class="eyebrow">Revisions</span>
+    <h2>Changes</h2>
+    <p>If this policy changes in a way that materially affects how information is handled, we will update the date at the top and note the change in the app before it takes effect.</p>
+  </section>
+
+  <section>
+    <span class="eyebrow">Get in touch</span>
+    <h2>Contact</h2>
+    <p class="contact">
+      <mark class="todo">fcruzado22@gmail.com</mark><br>
+      <mark class="todo">Francisco Cruzado</mark><br>
+      <mark class="todo">Oregon, United States</mark>
+    </p>
+  </section>
+
+  <footer>
+    <p>Word Pool — a word search game.</p>
+  </footer>
+
+</div>
+</body>
+</html>
