@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<!--
+  SUPPORT PAGE — Word Pool
+  Sibling to privacy.html: same palette, type, and grid device.
+
+  Satisfies App Review Guideline 1.5, which requires the Support URL to
+  include an easy way to contact you. The contact block is deliberately the
+  first thing after the heading rather than sitting under an FAQ.
+
+  BEFORE SUBMITTING — Guideline 2.1(a) rejects submissions containing
+  placeholder text or empty websites. Every [BRACKETED] value below must be
+  replaced with a real one, and the mark.todo CSS rule deleted once they are
+  gone. A reviewer opening this page and finding "[YOUR EMAIL ADDRESS]" is a
+  rejection.
+
+  The email address must be one you actually monitor. Reviewers do send test
+  messages, and an address that bounces fails 1.5 on its own.
+
+  No external requests: system fonts, inline styles, no scripts. The FAQ uses
+  native <details> so it works with JavaScript disabled.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — Word Pool</title>
+<meta name="description" content="Help, answers, and contact details for Word Pool, a word search game for iPhone and iPad.">
+<meta name="robots" content="index, follow">
+<style>
+  :root {
+    --ink:        #151b33;
+    --ink-soft:   #4d5573;
+    --ink-faint:  #8b91a6;
+    --paper:      #f2f3ef;
+    --raised:     #ffffff;
+    --rule:       #dcded6;
+    --found:      #c9dfd4;
+    --found-ink:  #1b4438;
+
+    --measure: 34rem;
+
+    --serif: "Iowan Old Style", "Charter", "Palatino Linotype", Palatino,
+             Georgia, "Times New Roman", serif;
+    --mono:  ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+             "Liberation Mono", monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink:       #e8eaf2;
+      --ink-soft:  #a8aec4;
+      --ink-faint: #6f7590;
+      --paper:     #12161f;
+      --raised:    #1a1f2c;
+      --rule:      #2a3040;
+      --found:     #24544a;
+      --found-ink: #d6efe4;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: var(--measure);
+    margin-inline: auto;
+    padding: 0 1.5rem 5rem;
+  }
+
+  /* ---------------------------------------------------------------- hero */
+  /* Same grid device as the privacy page, different word found in it. The
+     pair reads as one family without either page repeating the other. */
+
+  .hero { padding: clamp(3rem, 9vw, 5.5rem) 0 0; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    gap: clamp(0.1rem, 0.5vw, 0.25rem);
+    max-width: 26rem;
+    margin: 0 0 clamp(2rem, 6vw, 3rem);
+    font-family: var(--mono);
+    font-size: clamp(0.7rem, 2.6vw, 0.95rem);
+    color: var(--ink-faint);
+    user-select: none;
+  }
+
+  .grid span {
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    border-radius: 3px;
+  }
+
+  /* SUPPORT runs top-left to bottom-right, so the reveal follows the
+     diagonal the way a finger would drag it. */
+  .grid .found {
+    color: var(--found-ink);
+    background: var(--found);
+    animation: reveal 520ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+
+  .grid .found:nth-of-type(1) { animation-delay: 240ms; }
+  .grid .found:nth-of-type(2) { animation-delay: 285ms; }
+  .grid .found:nth-of-type(3) { animation-delay: 330ms; }
+  .grid .found:nth-of-type(4) { animation-delay: 375ms; }
+  .grid .found:nth-of-type(5) { animation-delay: 420ms; }
+  .grid .found:nth-of-type(6) { animation-delay: 465ms; }
+  .grid .found:nth-of-type(7) { animation-delay: 510ms; }
+
+  @keyframes reveal {
+    from { background: transparent; color: var(--ink-faint); transform: scale(0.9); }
+    to   { background: var(--found); color: var(--found-ink); transform: scale(1); }
+  }
+
+  h1 {
+    margin: 0 0 0.75rem;
+    font-size: clamp(2rem, 1.5rem + 2.4vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+
+  .app-name {
+    display: block;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .lede {
+    margin: 0;
+    font-size: 1.1em;
+    color: var(--ink-soft);
+  }
+
+  /* ------------------------------------------------------------- contact */
+  /* First thing after the heading. Guideline 1.5 asks for an easy way to
+     reach the developer; burying it under an FAQ is not that. */
+
+  .contact-card {
+    margin: clamp(2.5rem, 7vw, 3.5rem) 0 0;
+    padding: clamp(1.5rem, 5vw, 2rem);
+    background: var(--raised);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+  }
+
+  .contact-card h2 {
+    margin: 0 0 0.5rem;
+    padding: 0;
+    border: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  .contact-card p { margin: 0 0 1.25rem; color: var(--ink-soft); }
+
+  .mail {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+    padding: 0.7rem 1.1rem;
+    background: var(--found);
+    color: var(--found-ink);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 120ms ease;
+  }
+
+  .mail:hover { transform: translateY(-1px); }
+
+  .response {
+    display: block;
+    margin-top: 1.25rem;
+    font-size: 0.9em;
+    color: var(--ink-faint);
+  }
+
+  /* ------------------------------------------------------------ sections */
+
+  section { margin-top: clamp(3rem, 8vw, 4.25rem); }
+
+  .eyebrow {
+    display: block;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 0.6rem;
+  }
+
+  h2 {
+    margin: 0 0 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--rule);
+    font-size: clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+  }
+
+  p { margin: 0 0 1rem; }
+  p:last-child { margin-bottom: 0; }
+
+  ul { margin: 0 0 1rem; padding-left: 1.1rem; }
+  li { margin-bottom: 0.6rem; }
+  li:last-child { margin-bottom: 0; }
+
+  strong { font-weight: 600; }
+
+  a { color: inherit; text-decoration-color: var(--ink-faint); text-underline-offset: 0.2em; }
+  a:hover { text-decoration-color: currentColor; }
+
+  :focus-visible {
+    outline: 2px solid var(--found-ink);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* ---------------------------------------------------------------- faq */
+  /* Native <details>, so it works with JavaScript disabled and is keyboard
+     operable without any of it being reimplemented. */
+
+  details {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  details:first-of-type { border-top: 1px solid var(--rule); }
+
+  summary {
+    cursor: pointer;
+    padding: 1rem 2rem 1rem 0;
+    position: relative;
+    font-weight: 600;
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker { display: none; }
+
+  summary::after {
+    content: "+";
+    position: absolute;
+    right: 0.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--mono);
+    font-weight: 400;
+    font-size: 1.15rem;
+    color: var(--ink-faint);
+    transition: transform 160ms ease;
+  }
+
+  details[open] summary::after {
+    content: "\2212"; /* minus */
+  }
+
+  summary:hover { color: var(--found-ink); }
+
+  @media (prefers-color-scheme: dark) {
+    summary:hover { color: var(--found-ink); }
+  }
+
+  .answer {
+    padding: 0 0 1.25rem;
+    color: var(--ink-soft);
+  }
+
+  .answer p:last-child { margin-bottom: 0; }
+
+  /* --------------------------------------------------------- app details */
+
+  .facts {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95em;
+  }
+
+  .facts th, .facts td {
+    text-align: left;
+    padding: 0.8rem 1rem 0.8rem 0;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+
+  .facts tr:last-child th,
+  .facts tr:last-child td { border-bottom: 0; }
+
+  .facts th {
+    font-family: var(--mono);
+    font-weight: 500;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    white-space: nowrap;
+    width: 10rem;
+    padding-top: 1rem;
+  }
+
+  @media (max-width: 30rem) {
+    .facts th, .facts td { display: block; width: auto; }
+    .facts th { border-bottom: 0; padding-bottom: 0.15rem; }
+    .facts td { padding-top: 0; }
+  }
+
+  /* ---------------------------------------------------------- footer */
+
+  footer {
+    margin-top: clamp(3.5rem, 9vw, 5rem);
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.9em;
+    color: var(--ink-soft);
+  }
+
+  footer a { text-decoration-color: var(--ink-faint); }
+
+  /* --------------------------------------------------- draft placeholders */
+  /* Delete this rule once every bracketed value is replaced. Guideline
+     2.1(a) treats placeholder text on a Support URL as grounds for
+     rejection. */
+
+  mark.todo {
+    background: repeating-linear-gradient(
+      -45deg, #ffe8a3, #ffe8a3 6px, #ffdd7a 6px, #ffdd7a 12px);
+    color: #4a3a00;
+    padding: 0.05em 0.3em;
+    border-radius: 3px;
+    font-family: var(--mono);
+    font-size: 0.85em;
+    font-weight: 500;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    mark.todo {
+      background: repeating-linear-gradient(
+        -45deg, #6b5410, #6b5410 6px, #5a4608 6px, #5a4608 12px);
+      color: #ffe8a3;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .grid .found { animation: none; }
+    * { transition-duration: 0.01ms !important; }
+  }
+
+  @media print {
+    :root { --paper: #fff; --raised: #fff; --ink: #000; --ink-soft: #333;
+            --ink-faint: #666; --rule: #ccc; --found: #eee; --found-ink: #000; }
+    body { font-size: 11pt; }
+    .grid { display: none; }
+    .answer { display: block; }
+    section { break-inside: avoid; margin-top: 1.75rem; }
+    h2 { break-after: avoid; }
+    mark.todo { background: none; border: 1px solid #999; color: #000; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="grid" role="img" aria-label="A word search grid with the word SUPPORT found in it">
+      <span>V</span><span>K</span><span>M</span><span>T</span><span>X</span><span>B</span><span>F</span><span>W</span><span>H</span><span>J</span><span>Q</span>
+      <span class="found">S</span><span>D</span><span>N</span><span>P</span><span>L</span><span>R</span><span>G</span><span>Y</span><span>C</span><span>K</span><span>Z</span>
+      <span>T</span><span class="found">U</span><span>B</span><span>W</span><span>X</span><span>Q</span><span>F</span><span>S</span><span>K</span><span>T</span><span>L</span>
+      <span>N</span><span>H</span><span class="found">P</span><span>M</span><span>J</span><span>Y</span><span>D</span><span>G</span><span>Z</span><span>V</span><span>N</span>
+      <span>C</span><span>R</span><span>W</span><span class="found">P</span><span>B</span><span>X</span><span>L</span><span>T</span><span>M</span><span>F</span><span>K</span>
+      <span>J</span><span>Y</span><span>Z</span><span>G</span><span class="found">O</span><span>N</span><span>V</span><span>D</span><span>H</span><span>S</span><span>W</span>
+      <span>B</span><span>T</span><span>L</span><span>K</span><span>M</span><span class="found">R</span><span>X</span><span>C</span><span>Q</span><span>P</span><span>Y</span>
+      <span>D</span><span>G</span><span>V</span><span>N</span><span>W</span><span>H</span><span class="found">T</span><span>J</span><span>Z</span><span>B</span><span>F</span>
+    </div>
+
+    <span class="app-name">Word Pool</span>
+    <h1>Support</h1>
+    <p class="lede">Answers to common questions, and a real person to write to when they don't cover it.</p>
+  </header>
+
+  <div class="contact-card">
+    <h2>Get in touch</h2>
+    <p>Bug reports, questions, and suggestions all go to the same place. Please mention your device and iOS version if something isn't working — it makes problems much faster to track down.</p>
+    <a class="mail" href="mailto:fcruzado22@gmail.com"><mark class="todo">fcruzado22@gmail.com</mark></a>
+    <span class="response">Replies usually arrive within 48 hours.</span>
+  </div>
+
+  <section>
+    <span class="eyebrow">Playing the game</span>
+    <h2>Common questions</h2>
+
+    <details>
+      <summary>How do I select a word?</summary>
+      <div class="answer">
+        <p>Press on the first letter and drag to the last one. Words run in any direction — across, down, diagonally, and backwards — and the trail highlights as you go. Lift your finger to confirm.</p>
+        <p>If a selection doesn't take, check that the first and last letters line up in a straight line. Only rows, columns, and 45-degree diagonals count.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>What's the difference between the three modes?</summary>
+      <div class="answer">
+        <p><strong>Practice</strong> has no clock. Clear a grid and the next one appears automatically, so you can play for as long as you like.</p>
+        <p><strong>Timer</strong> gives you one grid against a countdown. Finish it and you'll see your time, along with whether it beat your best.</p>
+        <p><strong>Multiplayer</strong> pairs you with another player on the same grid. First to find every word wins.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Where do the words come from?</summary>
+      <div class="answer">
+        <p>Puzzle topics are generated on our servers, which is why the game needs a connection to deal a new grid. Each topic produces a fresh set of words, so grids don't repeat.</p>
+        <p>If a word list ever looks wrong — a misspelling, something off-topic, or anything inappropriate — please send it to us. Include the topic name and we'll take a look.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Can I play without an internet connection?</summary>
+      <div class="answer">
+        <p>The grid you're currently on keeps working, but generating a new one needs a connection. If you see an error when a fresh grid should appear, check your connection and try again.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Is there an account? Will my progress sync between devices?</summary>
+      <div class="answer">
+        <p>There's no account and no sign-in. Your best times and settings are stored on the device you played on, which means they don't transfer to another device and are removed if you delete the app.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Multiplayer is taking a long time to find someone.</summary>
+      <div class="answer">
+        <p>Matchmaking pairs you with whoever else is looking at that moment, so waits are longer when few people are playing. You can leave the queue at any time using the button on the waiting screen or the back arrow.</p>
+      </div>
+    </details>
+  </section>
+
+  <section>
+    <span class="eyebrow">When something breaks</span>
+    <h2>Troubleshooting</h2>
+
+    <details>
+      <summary>A new grid won't load</summary>
+      <div class="answer">
+        <p>This is nearly always a connection problem. Check that you're online, then close and reopen the app. If it persists on a connection you know is working, write to us with your device model and iOS version.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>My best time didn't save</summary>
+      <div class="answer">
+        <p>Times are only recorded when you clear the whole grid before the clock runs out. A round that ends on the countdown isn't scored. Best times are also kept per round length, so a three-minute record won't show up next to a five-minute one.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>The app closed unexpectedly</summary>
+      <div class="answer">
+        <p>Reopening usually resolves it. If it keeps happening, please tell us what you were doing at the time — which mode, and whether it was mid-puzzle or on a menu. That detail is usually enough to find the cause.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How do I delete my data?</summary>
+      <div class="answer">
+        <p>Deleting the app removes everything it stored on your device. Nothing about you is kept on our servers, so there's nothing further to request. The <a href="[PRIVACY POLICY URL]">privacy policy</a> explains this in full.</p>
+      </div>
+    </details>
+  </section>
+
+  <section>
+    <span class="eyebrow">Reference</span>
+    <h2>App details</h2>
+    <table class="facts">
+      <tbody>
+        <tr>
+          <th scope="row">Current version</th>
+          <td>1.0.3</td>
+        </tr>
+        <tr>
+          <th scope="row">Requires</th>
+          <td>iOS 15.0 or later, on iPhone and iPad</td>
+        </tr>
+        <tr>
+          <th scope="row">Price</th>
+          <td>Free, with no in-app purchases</td>
+        </tr>
+        <tr>
+          <th scope="row">Languages</th>
+          <td>English</td>
+        </tr>
+        <tr>
+          <th scope="row">Developer</th>
+          <td>Francisco Cruzado</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <span class="eyebrow">Accessibility</span>
+    <h2>Playing comfortably</h2>
+    <p>The game respects the Reduce Motion setting in iOS: turning it on stops the letters in the word list from drifting. Colours follow your device's light and dark appearance.</p>
+    <p>If something about the game is hard to use, we'd like to hear about it. Accessibility problems are treated as bugs, not requests.</p>
+  </section>
+
+  <footer>
+    <p>
+      Word Pool — a word search game.<br>
+      <a href="https://franciscoc.com/apps/wordool/privacy.html">Privacy policy</a>
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>
